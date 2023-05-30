@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/common/main.css" />
+    <link rel="stylesheet" href="./reference.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Publishing</title>
+  </head>
+
+  <style></style>
+
+  <body>
+    <div class="root">
+      <!-- nav -->
+      <nav>
+        <div class="nav-container">
+          <div class="logo">
+            <img src="./public/icon/logo.svg" alt="logo" />
+          </div>
+          <div class="menu-container">
+            <div class="menu-wrapper menu-blk">
+              <div class="menu reference">
+                <span>자료실</span>
+              </div>
+              <div class="menu qna">
+                <span>Q&A</span>
+              </div>
+            </div>
+            <div class="login-container">
+              <button class="login-btn login-blk">로그인</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- section -->
+      <div class="section-container">
+        <!-- submenu -->
+        <section class="subnav-container">
+          <div class="subnav-input-container">
+            <button class="subnav-btn create-btn">새 상위 폴더 생성</button>
+            <input
+              class="subnav-input search-input"
+              type="text"
+              placeholder="검색어를 입력하세요."
+            />
+          </div>
+
+          <!-- menu-tree -->
+          <div class="subnav-container">
+            <ul class="subnav">
+              <li class="subnav-first-depth">
+                <div class="subnav-el-container" id="toggle2">
+                  <div class="subnav-toggle-container">
+                    <div class="subnav-toggle-arrow icon">
+                      <img
+                        src="./public/icon/arrow_open_icon.svg"
+                        alt="opened"
+                      />
+                    </div>
+                    <div class="subnav-toggle-folder closed">
+                      <img
+                        src="./public/icon/opened_folder_icon.svg"
+                        alt="opened"
+                      />
+                    </div>
+                    <span class="subnav-title">새 폴더 2</span>
+                  </div>
+
+                  <div class="subnav-btn-container">
+                    <div class="subnav-add-folder">
+                      <img src="./public/icon/add_icon.svg" alt="closed" />
+                    </div>
+                    <div class="subnav-edit-folder">
+                      <img src="./public/icon/write_icon.svg" alt="closed" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- <ul>
+                  <li class="subnav-second-depth">
+                    <div class="closed" id="toggle2-1">
+                      <div class="toggle-arrow">
+                        <img
+                          src="./public/icon/arrow_open_icon.svg"
+                          alt="opened"
+                        />
+                      </div>
+                      <div class="toggle-folder">
+                        <img
+                          src="./public/icon/opened_folder_icon.svg"
+                          alt="closed"
+                        />
+                      </div>
+                      <span>새 폴더 2-1a</span>
+                      <div class="add-folder">
+                        <img src="./public/icon/add_icon.svg" alt="add" />
+                      </div>
+                      <div class="edit-folder">
+                        <img src="./public/icon/write_icon.svg" alt="edit" />
+                      </div>
+                    </div>
+
+                    <ul>
+                      <li class="subnav-third-depth">
+                        <div class="closed" id="toggle1">
+                          <div class="document">
+                            <img
+                              src="./public/icon/document_icon.svg"
+                              alt="document"
+                            />
+                          </div>
+                          <span>새 폴더 1</span>
+                          <div class="add-folder">
+                            <img src="./public/icon/add_icon.svg" alt="add" />
+                          </div>
+                          <div class="edit-folder">
+                            <img
+                              src="./public/icon/write_icon.svg"
+                              alt="closed"
+                            />
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <ul>
+                  <li class="subnav-first-depth">
+                    <div class="closed" id="toggle1">
+                      <div class="toggle-arrow">
+                        <img
+                          src="./public/icon/arrow_open_icon.svg"
+                          alt="closed"
+                        />
+                      </div>
+                      <div class="toggle-folder">
+                        <img
+                          src="./public/icon/closed_folder_icon.svg"
+                          alt="closed"
+                        />
+                      </div>
+                      <span>새 폴더 1</span>
+                      <div class="add-folder">
+                        <img src="./public/icon/add_icon.svg" alt="closed" />
+                      </div>
+                      <div class="edit-folder">
+                        <img src="./public/icon/write_icon.svg" alt="closed" />
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+
+                <ul>
+                  <li class="subnav-first-depth">
+                    <div class="closed" id="toggle1">
+                      <div class="toggle-arrow">
+                        <img
+                          src="./public/icon/arrow_open_icon.svg"
+                          alt="closed"
+                        />
+                      </div>
+                      <div class="toggle-folder">
+                        <img
+                          src="./public/icon/closed_folder_icon.svg"
+                          alt="closed"
+                        />
+                      </div>
+                      <span>새 폴더 1</span>
+                      <div class="add-folder">
+                        <img src="./public/icon/add_icon.svg" alt="closed" />
+                      </div>
+                      <div class="edit-folder">
+                        <img src="./public/icon/write_icon.svg" alt="closed" />
+                      </div>
+                    </div>
+                  </li>
+                </ul> -->
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="reference-container">
+          <div class="heading-container">
+            <div class="heading-wrapper">
+              <h1>자료실</h1>
+            </div>
+          </div>
+
+          <!-- board -->
+          <div class="content-container">
+            <div class="board-container">
+              <div class="board-func-container">
+                <div class="board-search-container">
+                  <input
+                    class="board-search-input search-input"
+                    type="text"
+                    placeholder="검색어를 입력하세요"
+                  />
+                </div>
+                <div class="board-btn-container">
+                  <!-- <input class="board-search" type="text" /> -->
+                  <button class="board-btn download-btn">다운로드</button>
+                  <button class="board-btn write-btn">글쓰기</button>
+                  <button class="board-btn delete-btn">삭제</button>
+                </div>
+              </div>
+
+              <ul class="board">
+                <li class="board-head">
+                  <div class="board-select">선택</div>
+                  <div class="board-index">구분</div>
+                  <div class="board-title">제목</div>
+                  <div class="board-date">날짜</div>
+                  <div class="board-author">작성자</div>
+                </li>
+                <li class="board-list">
+                  <div class="board-select">
+                    <input type="checkbox" />
+                  </div>
+                  <div class="board-index">구분</div>
+                  <div class="board-title">제목</div>
+                  <div class="board-date">날짜</div>
+                  <div class="board-author">작성자</div>
+                </li>
+              </ul>
+
+              <div class="pagination">
+                <div class="pagination-arrow prev">
+                  <img src="./public/icon/arrow_back_icon.svg" alt="back" />
+                </div>
+                <div class="pagination-page">1</div>
+                <div class="pagination-arrow next">
+                  <img src="./public/icon/arrow_forward_icon.svg" alt="back" />
+                </div>
+              </div>
+            </div>
+
+            <div class=""></div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./src/common/main.css" />
+    <link rel="stylesheet" href="./index.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Publishing</title>
+  </head>
+  <body>
+    <div class="root">
+      <nav>
+        <div class="nav-container">
+          <div class="logo">
+            <img src="./src/public/icon/logo_wht.svg" alt="logo" />
+          </div>
+          <div class="menu-container">
+            <div class="menu-wrapper menu-wht">
+              <div class="menu reference">
+                <span>자료실</span>
+              </div>
+              <div class="menu qna">
+                <span>Q&A</span>
+              </div>
+            </div>
+            <div class="login-container">
+              <button class="login-btn login-wht">로그인</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div class="main-search-container searching">
+        <div class="main-search-input-container">
+          <input
+            class="main-search"
+            type="text"
+            placeholder="검색어를 입력하세요."
+          />
+          <div class="search-icon icon">
+            <img src="./src/public/icon/search_icon.svg" alt="search" />
+          </div>
+        </div>
+        <div class="main-search-result-container">
+          <ul>
+            <li>
+              <div class="main-search-result-title"></div>
+              <div class="main-search-result-content"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="layout off"></div>
+    </div>
+  </body>
+</html>

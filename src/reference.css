@@ -1,0 +1,148 @@
+.section-container {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  min-width: 934px;
+  max-width: 1975px;
+  height: 100%;
+
+  border-right: 1px solid #cccccc;
+}
+
+/* common */
+
+/* subnav */
+.subnav-container {
+  width: 17em;
+}
+
+.subnav-input-contianer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 8.25em;
+  border-bottom: 1px solid #cccccc;
+}
+
+.subnav-btn {
+  width: 14.375em;
+  height: 2.875em;
+  margin-bottom: 0.625em;
+
+  border: 4px;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.create-btn {
+  background-color: #0063c1;
+  color: #fff;
+}
+
+.search-input {
+  padding: 0.5em;
+
+  color: #cccccc;
+
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+
+  box-sizing: border-box;
+}
+
+.subnav-container {
+  padding: 1.25em;
+}
+
+.subnav {
+  width: 100%;
+}
+
+.subnav-first-depth {
+  width: 100%;
+}
+
+.subnav > li {
+  height: 2.25em;
+}
+
+.subnav-el-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.subnav-toggle-container {
+  display: flex;
+  align-items: center;
+}
+
+.subnav-toggle-arrow {
+  width: 0.5625em;
+  margin: 0 3px;
+}
+.subnav-toggle-folder {
+  width: 1.375em;
+  margin-right: 0.625em;
+}
+.subnav-title {
+  font-size: 0.875rem;
+}
+
+.subnav-btn-container {
+  display: flex;
+  align-items: center;
+}
+.subnav-add-folder {
+  width: 1em;
+  margin-right: 0.5em;
+}
+.subnav-edit-folder {
+  width: 1em;
+}
+
+/* content */
+
+.reference-container {
+  width: 100%;
+}
+
+.heading-container {
+  display: flex;
+  align-items: center;
+  height: 8.25em;
+  padding: 0 2.5em;
+}
+.heading-wrapper {
+  font-size: 2.5rem;
+}
+
+.content-container {
+  display: flex;
+
+  width: 100%;
+}
+
+.download-btn {
+  color: #fff;
+  background-color: #00c1b5;
+  border-radius: 4px;
+}
+
+.write-btn {
+  color: #fff;
+  background-color: #0063c1;
+  border-radius: 4px;
+}
+
+.delete-btn {
+  color: #fff;
+  background-color: #f24c38;
+  border-radius: 4px;
+}

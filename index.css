@@ -1,0 +1,80 @@
+.root {
+  width: 100%;
+  height: 100%;
+  min-width: 954px;
+
+  background-image: url("./src/public/img/main_bck_img.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.main-search-container {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  box-sizing: border-box;
+}
+
+.main-search-input-container {
+  position: absolute;
+  top: 50%;
+  margin-left: 20%;
+}
+
+.main-search {
+  width: 30%;
+  max-width: 34.375em;
+  height: 3.125em;
+  padding: 0 0.875em;
+
+  border-radius: 8px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.main-search::placeholder {
+  color: #fff;
+}
+
+.search-icon {
+  position: absolute;
+  width: 1.25em;
+}
+.main-search-container .searching {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-search-container .searching > .main-search-input-container {
+  position: inherit;
+}
+
+.main-search-result-container {
+  display: none;
+}
+
+.main-search-container .searching > .main-search-result-container {
+  position: inherit;
+  margin-top: 75px;
+  padding: 40px;
+
+  border-radius: 8px;
+  background-color: rgba(217, 217, 217, 0.2);
+}
+
+/* modal */
+
+.layout {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}

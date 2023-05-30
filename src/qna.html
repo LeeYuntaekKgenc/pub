@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/common/main.css" />
+    <link rel="stylesheet" href="./qna.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Publishing</title>
+  </head>
+
+  <style></style>
+
+  <body>
+    <div class="root">
+      <!-- nav -->
+      <nav>
+        <div class="nav-container">
+          <div class="logo">
+            <img src="./public/icon/logo.svg" alt="logo" />
+          </div>
+          <div class="menu-container">
+            <div class="menu-wrapper menu-blk">
+              <div class="menu reference">
+                <span>자료실</span>
+              </div>
+              <div class="menu qna">
+                <span>Q&A</span>
+              </div>
+            </div>
+            <div class="login-container">
+              <button class="login-btn login-blk">로그인</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- section -->
+      <section>
+        <div class="heading-container">
+          <div class="heading-wrapper">
+            <h1>Q&A</h1>
+            <p>질문하세요</p>
+          </div>
+        </div>
+
+        <div class="board-container">
+          <div class="btn-container">
+            <!-- <input class="board-search" type="text" /> -->
+            <button class="board-btn write-btn">글쓰기</button>
+            <button class="board-btn delete-btn">삭제</button>
+          </div>
+          <ul class="board">
+            <li class="board-head">
+              <div class="board-select">선택</div>
+              <div class="board-index">구분</div>
+              <div class="board-title">제목</div>
+              <div class="board-date">날짜</div>
+              <div class="board-author">작성자</div>
+            </li>
+            <li class="board-list">
+              <div class="board-select">
+                <input type="checkbox" />
+              </div>
+              <div class="board-index">구분</div>
+              <div class="board-title">제목</div>
+              <div class="board-date">날짜</div>
+              <div class="board-author">작성자</div>
+            </li>
+          </ul>
+
+          <div class="pagination">
+            <div class="pagination-arrow prev">
+              <img src="./public/icon/arrow_back.svg" alt="back" />
+            </div>
+            <div class="pagination-page">1</div>
+            <div class="pagination-arrow next">
+              <img src="./public/icon/arrow_forward.svg" alt="back" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
