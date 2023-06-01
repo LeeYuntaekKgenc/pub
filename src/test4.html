@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./test4.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <script src="./index.js" defer type="module"></script>
+    <title>Publishing</title>
+  </head>
+  <body>
+    <div class="main-background">
+      <nav class="nav">
+        <kg-nav
+          color="wht"
+          menu_list='[{"name":"자료실","class":"reference"}, {"name":"Q&A","class":"qna"}]'
+        ></kg-nav>
+      </nav>
+
+      <section class="main-search-container">
+        <div class="main-search-input-container">
+          <input
+            class="main-search-input"
+            type="text"
+            placeholder="검색어를 입력하세요."
+          />
+          <!-- <div class="search-icon icon">
+            <img src="./src/public/icon/search_icon.svg" alt="search" />
+          </div> -->
+        </div>
+
+        <div class="main-search-result-container">
+          <ul>
+            <li>
+              <div class="main-search-result-title">
+                <div class="title">도로 BIM에서 ‘우수관’ 검색결과</div>
+                <div class="result">총 2건 검색</div>
+              </div>
+              <div class="main-search-result-content">
+                <a>
+                  실시설계 / 배수공 / [ 기술자료] Civil3D 도로 우수관 모델링
+                  방법
+                </a>
+                <a>
+                  실시설계 / 배수공 / [ 기술자료] Civil3D 도로 우수관 모델링
+                  방법
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="main-search-result-title">
+                <div class="title">단지 BIM에서 ‘우수관’ 검색결과</div>
+                <div class="result">총 0건 검색</div>
+              </div>
+            </li>
+            <li>
+              <div class="main-search-result-title">
+                <div class="title">자료실에서 ‘우수관’ 검색결과</div>
+                <div class="result">총 1건 검색</div>
+              </div>
+              <div class="main-search-result-content">
+                <a>
+                  실시설계 / 배수공 / [ 기술자료] Civil3D 도로 우수관 모델링
+                  방법
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="main-search-result-title">
+                <div class="title">Q&A에서 ‘우수관’ 검색결과</div>
+                <div class="result">총 1건 검색</div>
+              </div>
+              <div class="main-search-result-content">
+                <a>
+                  실시설계 / 배수공 / [ 기술자료] Civil3D 도로 우수관 모델링
+                  방법
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="layout"></div>
+      </section>
+
+      <section class="login-modal-container on">
+        <kg-modal>
+          <div class="logo">
+            <img src="./src/public/icon/logo.svg" alt="logo" />
+          </div>
+          <form class="login-modal-form">
+            <input class="login-id-input" type="text" placeholder="ID" />
+            <input
+              class="login-password-input"
+              type="password"
+              placeholder="PASSWORD"
+            />
+            <div class="login-state">
+              <input type="checkbox" /><span>로그인 상태 유지</span>
+            </div>
+            <button class="login-submit-btn" type="submit">로그인</button>
+          </form>
+        </div>
+
+        </kg-modal>
+      </section>
+    </div>
+  </body>
+</html>

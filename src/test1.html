@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./test1.css" />
+    <link rel="stylesheet" href="./main.css" />
+
+    <script src="./index.js" defer type="module"></script>
+    <title>Publishing</title>
+  </head>
+  <body>
+    <div class="root">
+      <nav class="nav">
+        <kg-nav
+          menu_list='[{"name":"자료실","class":"reference"}, {"name":"Q&A","class":"qna"}]'
+        ></kg-nav>
+      </nav>
+      <main>
+        <section class="subnav-section">
+          <div class="subnav-input-container">
+            <kg-button type="middle" color="#0063c1" width="100%"
+              >새 상위 폴더 생성</kg-button
+            >
+            <kg-input color="#CCCCCC"></kg-input>
+          </div>
+
+          <div class="subnav-container">
+            <!-- <ul class="subnav">
+              <li class="subnav-first-depth">
+                <div class="subnav-el-container">
+                  <div class="subnav-toggle-container">
+                    <div class="subnav-toggle-arrow">
+                      <img
+                        src="./src/public/icon/arrow_open_icon.svg"
+                        alt="opened"
+                      />
+                    </div>
+                    <div class="subnav-toggle-folder closed">
+                      <img
+                        src="./src/public/icon/file_closed_icon.svg"
+                        alt="opened"
+                      />
+                    </div>
+                    <span class="subnav-title">새 폴더 2</span>
+                  </div>
+
+                  <div class="subnav-btn-container">
+                    <div class="subnav-add-folder">
+                      <img src="./src/public/icon/add_icon.svg" alt="closed" />
+                    </div>
+                    <div class="subnav-edit-folder">
+                      <img
+                        src="./src/public/icon/write_icon.svg"
+                        alt="closed"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul> -->
+          </div>
+        </section>
+
+        <section class="board-section">
+          <div class="board-heading">
+            <h1>자료실</h1>
+          </div>
+          <div class="board-container">
+            <div class="board-input-container">
+              <div class="board-search-container">
+                <kg-input color="#CCCCCC"></kg-input>
+                <!-- <div class="board-search-icon icon">
+                  <img src="./src/public/icon/search_icon.svg" alt="search" />
+                </div> -->
+              </div>
+              <div class="board-btn-container">
+                <kg-button color="#00c1b5">다운로드</kg-button>
+                <kg-button color="#0063c1">글쓰기</kg-button>
+                <kg-button color="#f24c38">삭제</kg-button>
+              </div>
+            </div>
+
+            <div class="board-wrapper">
+              <div class="board-list-container">
+                <kg-board-list
+                  data='[{"checkbox": "","title": "hello", "dept": "1층", "author":"이윤택", "date": "2023-06-11"}]'
+                  ratio='["10%", "40%", "10%", "10%", "20%"]'
+                ></kg-board-list>
+              </div>
+              <div class="board-content-container">
+                <kg-board-detail
+                  data='{"title": "안녕하세요", "dept": "BIM", "author":"이윤택", "date": "2023-06-01", "content":"안녕하세요, 이윤택입니다."}'
+                ></kg-board-detail>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

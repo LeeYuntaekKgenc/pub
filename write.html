@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index1.css" />
+    <link rel="stylesheet" href="./write.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./index.js" defer></script>
+    <title>Publishing</title>
+  </head>
+  <body>
+    <nav class="nav wht">
+      <div class="nav-container">
+        <div class="logo">
+          <img src="./src/public/icon/logo.svg" alt="logo" />
+        </div>
+        <div class="menu-container">
+          <div class="menu-wrapper menu-blk">
+            <div class="menu reference">
+              <span>자료실</span>
+            </div>
+            <div class="menu qna">
+              <span>Q&A</span>
+            </div>
+          </div>
+          <div class="login-container">
+            <button class="login-btn login-blk">로그인</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="write-container">
+      <form class="write-form">
+        <div class="write-heading-container">
+          <h1>글쓰기</h1>
+        </div>
+        <div class="write-title-container write-form-list">
+          <label>제목</label>
+          <input
+            class="write-input"
+            type="text"
+            placeholder="제목을 입력하세요."
+          />
+        </div>
+        <div class="write-authorization-container write-form-list">
+          <div class="write-dept-wrapper">
+            <label>부서명</label>
+            <input
+              class="write-input"
+              type="text"
+              placeholder="부서명을 입력하세요."
+            />
+          </div>
+          <div class="write-author-wrapper">
+            <label>이름</label>
+            <input
+              class="write-input"
+              type="text"
+              placeholder="이름을 입력하세요."
+            />
+          </div>
+
+          <div class="write-password-wrapper">
+            <label>비밀번호</label>
+            <input
+              class="write-input"
+              type="password"
+              placeholder="비밀번호를 입력하세요."
+            />
+            <label>비밀글</label>
+            <input type="checkbox" />
+          </div>
+        </div>
+        <div class="write-content"></div>
+        <div class="write-attachment-container">
+          <div class="write-attachment-title">첨부파일</div>
+          <div class="write-attachment-content">첨부된 파일이 없습니다.</div>
+        </div>
+
+        <div class="write-btn-container">
+          <button class="submit-btn" type="submit">제출</button>
+          <button class="cancel-btn" type="button">취소</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

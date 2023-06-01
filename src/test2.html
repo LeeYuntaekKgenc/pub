@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./test2.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <script src="./index.js" defer type="module"></script>
+    <title>Publishing</title>
+  </head>
+  <body>
+    <div class="root">
+      <nav class="nav">
+        <kg-nav
+          menu_list='[{"name":"자료실","class":"reference"}, {"name":"Q&A","class":"qna"}]'
+        ></kg-nav>
+      </nav>
+      <main class="write-container">
+        <form class="write-form">
+          <div class="write-heading-container">
+            <h1>글쓰기</h1>
+          </div>
+          <div class="write-title-container write-form-list">
+            <label>제목</label>
+            <kg-input
+              color="#cccccc"
+              width="100%"
+              placeholder="제목을 입력하세요."
+            />
+          </div>
+          <div class="write-authorization-container write-form-list">
+            <div class="write-dept-wrapper">
+              <label>부서명</label>
+              <kg-input color="#cccccc" placeholder="부서명을 입력하세요." />
+            </div>
+            <div class="write-author-wrapper">
+              <label>이름</label>
+              <kg-input color="#cccccc" placeholder="이름을 입력하세요." />
+            </div>
+
+            <div class="write-password-wrapper">
+              <label>비밀번호</label>
+              <kg-input
+                type="password"
+                color="#cccccc"
+                placeholder="비밀번호를 입력하세요."
+              />
+
+              <label>비밀글</label>
+              <input type="checkbox" />
+            </div>
+          </div>
+          <div class="write-content"></div>
+          <div class="write-attachment-container">
+            <div class="write-attachment-title">첨부파일</div>
+            <div class="write-attachment-content">첨부된 파일이 없습니다.</div>
+          </div>
+
+          <div class="write-btn-container">
+            <kg-button type="submit" color="#0063C1">제출</kg-button>
+            <kg-button color="#F24C38">취소</kg-button>
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+@import "./_common_animation.css";
+.board {
+  width: 100%;
+
+  font-size: 1rem;
+
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.board > li {
+  display: flex;
+  align-items: center;
+}
+.board > li > div {
+  padding: 0 5px;
+}
+
+.board-head {
+  display: flex;
+  width: 100%;
+  height: 3.84em;
+
+  font-size: 0.8125rem;
+  font-weight: 700;
+
+  color: #666666;
+  background-color: #f4f4f4;
+}
+
+.board-list {
+  display: flex;
+  width: 100%;
+  height: 5.8em;
+
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #666666;
+
+  cursor: pointer;
+  border-bottom: 1px solid #cccccc;
+}
+
+.board-list:hover {
+  background-color: #f4f4f4;
+}
+.board-list-el {
+  padding: 0 0.35em;
+}
+
+.board-head > div {
+  text-align: center;
+}
+
+/* pagination */
+.board-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3em 0;
+  font-size: 1rem;
+
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.board-pagination-pages {
+  margin: 0 3.71em;
+  font-size: 0.875em;
+}
+
+.board-pagination-pages > div {
+  margin: 0 1.43em;
+  width: 0.625em;
+}
+
+.board-pagination-arrow-bck {
+  width: 14px;
+  color: #cccccc;
+}
+
+.board-pagination-arrow-nxt {
+  width: 14px;
+  color: #cccccc;
+}

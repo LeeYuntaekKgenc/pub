@@ -1,0 +1,42 @@
+.basic-btn {
+  margin: 0;
+  padding: 0;
+  height: 2.6em;
+
+  font-size: 0.875rem;
+  font-weight: 400;
+  border: 1px solid;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.middle-btn {
+  margin: 0;
+  height: 2.875em;
+
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid;
+  border-radius: 4px;
+
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  margin: 0;
+  padding: 0;
+  height: 2.6em;
+
+  font-size: 0.875rem;
+  font-weight: 400;
+  border: 1px solid;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.kg-btn:hover {
+  filter: grayscale(0.4);
+}

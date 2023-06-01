@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./index1.css" />
+    <link rel="stylesheet" href="./reference1.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./src/css/main.css" />
+    <script src="./index.js" defer></script>
+    <script src="./src/index.js" defer type="module"></script>
+    <title>Publishing</title>
+  </head>
+  <body>
+    <div class="root">
+      <nav class="nav wht">
+        <div class="nav-container">
+          <div class="logo">
+            <img src="./src/public/icon/logo.svg" alt="logo" />
+          </div>
+          <div class="menu-container">
+            <div class="menu-wrapper menu-blk">
+              <div class="menu reference">
+                <span>자료실</span>
+              </div>
+              <div class="menu qna">
+                <span>Q&A</span>
+              </div>
+            </div>
+            <div class="login-container">
+              <button class="login-btn login-blk">로그인</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <section class="subnav-section">
+          <div class="subnav-input-container">
+            <button class="subnav-create-btn">새 상위 폴더 생성</button>
+            <input
+              class="subnav-search-input"
+              type="text"
+              placeholder="검색어를 입력하세요."
+            />
+          </div>
+
+          <div class="subnav-container">
+            <ul class="subnav">
+              <li class="subnav-first-depth">
+                <div class="subnav-el-container">
+                  <div class="subnav-toggle-container">
+                    <div class="subnav-toggle-arrow">
+                      <img
+                        src="./src/public/icon/arrow_open_icon.svg"
+                        alt="opened"
+                      />
+                    </div>
+                    <div class="subnav-toggle-folder closed">
+                      <img
+                        src="./src/public/icon/file_closed_icon.svg"
+                        alt="opened"
+                      />
+                    </div>
+                    <span class="subnav-title">새 폴더 2</span>
+                  </div>
+
+                  <div class="subnav-btn-container">
+                    <div class="subnav-add-folder">
+                      <img src="./src/public/icon/add_icon.svg" alt="closed" />
+                    </div>
+                    <div class="subnav-edit-folder">
+                      <img
+                        src="./src/public/icon/write_icon.svg"
+                        alt="closed"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="board-section">
+          <div class="board-heading">
+            <h1>자료실</h1>
+          </div>
+          <div class="board-container">
+            <div class="board-input-container">
+              <div class="board-search-container">
+                <input
+                  class="board-search-input"
+                  type="text"
+                  placeholder="검색어를 입력하세요"
+                />
+                <!-- <div class="board-search-icon icon">
+                  <img src="./src/public/icon/search_icon.svg" alt="search" />
+                </div> -->
+              </div>
+              <div class="board-btn-container">
+                <button class="board-download-btn">다운로드</button>
+                <button class="board-write-btn">글쓰기</button>
+                <button class="board-delete-btn">삭제</button>
+              </div>
+            </div>
+
+            <div class="board-wrapper">
+              <div class="board-list-container">
+                <!-- <kg-board-list data='[{"title": "hello", "dept": "BIM", "user":"이윤택", "date": "2023-06-01"}]'' ></kg-board-list> -->
+
+                <ul class="board-list">
+                  <li class="board-list-head">
+                    <div class="board-list-head-select">선택</div>
+                    <div class="board-list-head-title">제목</div>
+                    <div class="board-list-head-date">작성일자</div>
+                    <div class="board-list-head-author">다운로드</div>
+                  </li>
+                  <li class="board-list-value">
+                    <div class="board-list-select">
+                      <input type="checkbox" />
+                      <span>1</span>
+                    </div>
+                    <div class="board-list-title-container">
+                      <div class="board-list-title">
+                        입사지원 양식에 대한
+                        질문입니다.aasdasdasdasddasdadasdasdasd
+                      </div>
+                      <div class="board-list-author-container">
+                        <span>BIM 개발팀</span>
+                        <span>이윤택</span>
+                      </div>
+                    </div>
+                    <div class="board-list-date">2023.05.31</div>
+                    <div class="board-list-download">다운로드</div>
+                  </li>
+                </ul>
+
+                <!-- <div class="pagination">
+                  <div class="pagination-arrow prev">
+                    <img
+                      src="./src/public/icon/arrow_back_icon.svg"
+                      alt="back"
+                    />
+                  </div>
+                  <div class="pagination-page">1</div>
+                  <div class="pagination-arrow next">
+                    <img
+                      src="./src/public/icon/arrow_forward_icon.svg"
+                      alt="back"
+                    />
+                  </div>
+                </div> -->
+              </div>
+              <div class="board-content-container">
+                <div class="board-content">
+                  <div class="board-content-title-container">
+                    <h1>입사지원양식</h1>
+                    <span>BIM 개발부</span>
+                    <span>|</span>
+                    <span> 이윤택</span>
+                  </div>
+
+                  <div class="board-content-detail-container">
+                    안녕하세요, 이윤택입니다.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
