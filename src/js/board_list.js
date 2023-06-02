@@ -236,7 +236,6 @@ class BoardListClass extends HTMLElement {
           title.style.fontWeight = "500";
 
           const user = document.createElement("div");
-
           user.textContent = `${
             this.datas[i]["dept"] ? this.datas[i]["dept"] : "무소속"
           } | ${this.datas[i]["author"] ? this.datas[i]["author"] : "익명"}`;
