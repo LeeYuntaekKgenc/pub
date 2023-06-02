@@ -1,8 +1,6 @@
 class BoardDetailClass extends HTMLElement {
   connectedCallback() {
-    this.init();
-
-    let datas = this.getAttribute("data");
+    let datas = JSON.parse(this.getAttribute("data"));
 
     if (!datas) {
       const wrapper = document.createElement("div");
@@ -50,10 +48,6 @@ class BoardDetailClass extends HTMLElement {
   attributeChangedCallback() {
     //바뀌면 실행
     console.log("값이 변경되었습니다.");
-  }
-
-  init() {
-    this.innerHTML = "";
   }
 }
 

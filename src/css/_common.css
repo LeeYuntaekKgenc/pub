@@ -30,7 +30,7 @@ input {
   border-radius: 4px;
   box-sizing: border-box;
 
-  border: none;
+  border: 1px solid;
   outline: none;
 }
 

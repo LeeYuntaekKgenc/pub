@@ -10,6 +10,7 @@ kg-nav {
 
 .menu-wrapper {
   display: flex;
+  align-items: center;
 
   height: 100%;
 }
@@ -17,17 +18,16 @@ kg-nav {
 .menu {
   display: flex;
   align-items: center;
+  justify-content: center;
 
+  width: 7.5em;
   height: 100%;
   cursor: pointer;
+  text-align: center;
   transition: 0.2s;
 }
 .menu:hover {
   font-weight: 600;
-}
-
-.menu > a {
-  margin: auto 2.5em;
 }
 
 .menu.blk > a {
@@ -38,7 +38,14 @@ kg-nav {
   color: #fff;
 }
 
-.login-container {
+.func-wrapper {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+}
+
+.login-wrapper {
   margin: auto 2.5em;
 }
 
@@ -77,5 +84,4 @@ kg-nav {
 .login-btn.wht:hover {
   background-color: #fff;
   color: #000;
-  border-color: #000;
 }

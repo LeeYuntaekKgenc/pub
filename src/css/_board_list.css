@@ -5,7 +5,7 @@
   font-size: 1rem;
 
   animation-name: fadeIn;
-  animation-duration: 0.5s;
+  animation-duration: 0.2s;
   animation-fill-mode: forwards;
 }
 
@@ -45,6 +45,15 @@
 .board-list:hover {
   background-color: #f4f4f4;
 }
+
+.board-list.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 10em;
+}
+
 .board-list-el {
   padding: 0 0.35em;
 }
@@ -67,6 +76,7 @@
 }
 
 .board-pagination-pages {
+  display: flex;
   margin: 0 3.71em;
   font-size: 0.875em;
 }
@@ -74,6 +84,8 @@
 .board-pagination-pages > div {
   margin: 0 1.43em;
   width: 0.625em;
+
+  cursor: pointer;
 }
 
 .board-pagination-arrow-bck {

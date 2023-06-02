@@ -1,15 +1,18 @@
 class ModalClass extends HTMLElement {
   connectedCallback() {
-    let toggle = this.getAttribute("toggle");
+    let inner = this.innerHTML;
+    this.innerHTML = "";
+
     let position = this.getAttribute("position");
     let width = this.getAttribute("width");
     let height = this.getAttribute("height");
 
-    let inner = this.innerHTML;
-    this.innerHTML = "";
+    const modal_container = document.createElement("div");
+    modal_container.className = "modal-container";
 
     const modal = document.createElement("div");
-    modal.className = `modal ${toggle}`;
+    modal.className = "modal";
+    modal.innerHTML = inner;
 
     if (!position) position = "center";
 
@@ -24,28 +27,26 @@ class ModalClass extends HTMLElement {
         break;
     }
 
-    if (width) {
-      modal.style.minWidth = width;
-    }
+    if (!width) width = "31.25em";
+    modal.style.width = width;
 
-    if (height) {
-      modal.style.minHeight = height;
-    }
-
-    // modal.appendChild(inner);
+    if (!height) height = "35em";
+    modal.style.height = height;
 
     const layout = document.createElement("div");
-    layout.className = `layout ${toggle}`;
+    layout.className = `modal-layout`;
     layout.addEventListener("click", (e) => {
       e.preventDefault();
-      this.toggle = "off";
-      console.log(this.toggle);
+      this.classList.replace("on", "off");
+      setTimeout(() => {
+        this.classList.remove("off");
+      }, 200);
     });
 
-    console.log(this.parentNode.classList.replace("on", ""));
-    // document.appendChild(layout);
+    modal_container.appendChild(modal);
+    modal_container.appendChild(layout);
 
-    this.appendChild(modal);
+    this.appendChild(modal_container);
   }
 }
 

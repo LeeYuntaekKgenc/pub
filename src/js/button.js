@@ -1,9 +1,9 @@
 class ButtonClass extends HTMLElement {
   connectedCallback() {
-    /// ui 생성
+    let name = this.innerText;
 
     let id = this.getAttribute("id");
-    let name = this.innerText;
+
     let variant = this.getAttribute("variant");
     let type = this.getAttribute("type");
     let width = this.getAttribute("width");
@@ -11,6 +11,7 @@ class ButtonClass extends HTMLElement {
 
     const button = document.createElement("button");
 
+    this.id = "";
     button.id = id ? id : "";
     button.innerText = name;
     this.innerText = "";
@@ -57,26 +58,13 @@ class ButtonClass extends HTMLElement {
     }
 
     /// event
-    let onClick = this.getAttribute("onClick");
+    let onClick = eval(this.getAttribute("onClick"));
     if (onClick) {
-      if (typeof onClick !== "function") {
-        onClick = (e) => {
-          e.preventDefault();
-        };
-      }
-      button.addEventListener("click", onClick);
+      if (typeof onClick === "function")
+        button.addEventListener("click", onClick);
     }
 
     this.appendChild(button);
-  }
-
-  static get observedAttributes() {
-    return ["name"];
-  }
-
-  attributeChangedCallback() {
-    //바뀌면 실행
-    console.log("바귄다");
   }
 }
 

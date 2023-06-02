@@ -1,20 +1,46 @@
-.layout {
+@import "./_common_animation.css";
+
+kg-modal {
   display: none;
+}
+
+kg-modal.on {
+  display: block;
+
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+kg-modal.off {
+  display: block;
+
+  animation-name: fadeOut;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+.modal-container {
   position: absolute;
   top: 0;
   left: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .modal {
-  z-index: 101;
+  z-index: 110;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 31.25em;
-  height: 35em;
+
   padding: 0 3.4375em;
 
   border-radius: 8px;
@@ -22,4 +48,17 @@
   background-color: #fff;
 
   box-sizing: border-box;
+}
+
+.modal-layout {
+  z-index: 105;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.4);
 }
