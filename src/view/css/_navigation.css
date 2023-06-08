@@ -1,0 +1,180 @@
+@import "./_common_animation.css";
+kg-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+  font-size: 1rem;
+}
+
+.kg-menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.kg-menu-wrapper {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+}
+
+.kg-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 7.5em;
+  height: 100%;
+  text-align: center;
+}
+
+.kg-menu > a {
+  cursor: pointer;
+  transition: 0.2s;
+}
+.kg-menu > a:hover {
+  transform: scale(110%);
+}
+
+.kg-menu.blk > a {
+  color: #000;
+}
+
+.kg-menu.wht > a {
+  color: #fff;
+}
+
+.kg-nav-func-wrapper {
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+}
+
+.kg-menu-func-modal-container {
+  z-index: 100;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: none;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  padding-top: 2em;
+}
+
+.kg-menu-func-modal-container.on {
+  display: flex;
+
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+.kg-menu-func-modal-container.off {
+  display: flex;
+
+  animation-name: fadeOut;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+.kg-menu-func-modal-layout {
+  z-index: 105;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.kg-menu-func-modal {
+  z-index: 110;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 23.75em;
+  padding: 3.4375em;
+
+  border-radius: 8px;
+
+  background-color: #fff;
+
+  box-sizing: border-box;
+}
+.kg-menu-func-modal > form {
+  width: 100%;
+}
+
+.kg-menu-func-modal .subtitle {
+  color: #4d4d4d;
+  font-weight: 400;
+}
+
+.kg-menu-func-modal hr {
+  background: #cccccc;
+  height: 1px;
+  border: 0;
+}
+
+.kg-menu-func-modal kg-input {
+  margin-bottom: 0.625em;
+}
+
+.kg-menu-func-modal {
+  margin-bottom: 0.625em;
+}
+
+.kg-menu-func-modal > form:first-child {
+  margin-bottom: 1.875em;
+}
+
+/* icon */
+.kg-logo-wrapper {
+  width: 3.75em;
+  margin-right: 1.5625em;
+}
+
+.kg-menu-edit-btn-wrapper {
+  margin-left: 0.5em;
+  width: 1em;
+
+  border: 0.5px solid #fff;
+  border-radius: 50px;
+
+  opacity: 0.5;
+
+  transition: 0.2s;
+}
+
+.kg-menu-edit-btn-wrapper:hover {
+  border-color: #cccccc;
+
+  opacity: 1;
+}
+
+.kg-menu-add-btn-wrapper {
+  border: 0.5px solid #fff;
+  border-radius: 50px;
+
+  transition: 0.2s;
+}
+.kg-menu-add-btn-wrapper:hover {
+  border-color: #cccccc;
+
+  transform: scale(120%);
+}

@@ -1,0 +1,66 @@
+.kg-btn.basic-btn {
+  margin: 0;
+  padding: 0;
+  width: 6.357em;
+  height: 2.6em;
+
+  font-size: 0.875rem;
+  font-weight: 400;
+  border: 1px solid;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.kg-btn.middle-btn {
+  margin: 0;
+  height: 2.875em;
+
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid;
+  border-radius: 4px;
+
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.kg-btn.login-btn {
+  height: 2.85em;
+  padding: 0 2em;
+  width: 8.42em;
+
+  font-weight: 300;
+
+  border: 1px solid;
+
+  transition: 0.2s;
+}
+
+.kg-btn.login-btn.blk:hover {
+  background-color: #000;
+  color: #fff;
+  border-color: #fff;
+}
+
+.kg-btn.login-btn.wht:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.kg-btn.submit-btn {
+  margin: 0;
+  padding: 0;
+  height: 2.6em;
+
+  font-size: 0.875rem;
+  font-weight: 400;
+  border: 1px solid;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.kg-btn:hover {
+  filter: grayscale(0.4);
+}

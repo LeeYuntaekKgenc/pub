@@ -1,0 +1,140 @@
+kg-search {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: none;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  min-width: 1340px;
+  height: 100%;
+
+  box-sizing: border-box;
+}
+
+kg-search.on {
+  display: flex;
+}
+
+.kg-main-search-input-wrapper {
+  z-index: 105;
+  position: relative;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+
+  margin: 0;
+}
+
+.kg-main-search-input {
+  min-width: 39.28em;
+  height: 4em;
+  padding: 0 1.2em;
+  margin-top: 10.3125em;
+
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.kg-main-search-input::placeholder {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.kg-search-icon {
+  position: absolute;
+  right: 1.25em;
+
+  width: 1.25em;
+  margin-top: 0.3125em;
+}
+
+.kg-main-search-result-wrapper {
+  z-index: 105;
+
+  display: none;
+
+  width: 80%;
+  min-width: 56.25em;
+  max-width: 85em;
+  max-height: 34.375em;
+
+  margin-top: 5em;
+  padding: 2.5em;
+
+  border-radius: 8px;
+
+  color: #fff;
+  background-color: rgba(217, 217, 217, 0.2);
+
+  transition: 1s;
+
+  overflow-y: scroll;
+}
+
+.kg-main-search-result-wrapper {
+  display: block;
+}
+
+.kg-main-search-result-wrapper > ul > li {
+  margin-bottom: 3.75em;
+}
+
+.kg-main-search-result-content {
+  display: flex;
+  flex-direction: column;
+  margin: 1.25em;
+}
+
+.kg-main-search-result-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.kg-main-search-result-title-wrapper > .kg-title {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  margin: 8px 0px;
+}
+
+.kg-main-search-result-title-wrapper > .kg-title::after {
+  content: "";
+  flex-grow: 1;
+  background: #fff;
+  height: 1px;
+  font-size: 0px;
+  line-height: 0px;
+  margin: 0px 16px;
+}
+
+.kg-main-search-result-title-wrapper > .kg-result {
+  width: 10%;
+}
+
+.kg-main-search-result-content-wrapper > a {
+  margin-bottom: 0.875em;
+}
+
+.kg-main-search-result-content-wrapper > a:last-child {
+  margin-bottom: 0;
+}
+
+.kg-layout {
+  z-index: 100;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.8);
+}
