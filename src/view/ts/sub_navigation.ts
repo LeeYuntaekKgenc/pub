@@ -29,7 +29,7 @@ class SubNavClass extends HTMLElement {
     this.datas.forEach((data) => {
       const subnavFirstLi = document.createElement("li");
       subnavFirstLi.className = "kg-subnav-first-depth";
-      if (data.children) {
+      if (data) {
         const subnavSecondUl = document.createElement("ul");
         subnavSecondUl.className = "kg-subnav-second-depth-wrapper";
       }

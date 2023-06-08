@@ -10,7 +10,7 @@ class NavClass extends HTMLElement {
   private initFlag = false;
 
   /// data
-  static baseMenuList = [
+  private baseMenuList = [
     { name: "자료실", class: "reference" },
     { name: "Q&A", class: "qna" },
   ];
@@ -19,20 +19,13 @@ class NavClass extends HTMLElement {
   /// style
   private color = "blk";
 
-  private onClick = "";
   private onDeleteSubmit = "";
   private onAddSubmit = "";
   private onEditSubmit = "";
 
   connectedCallback() {
     this.store();
-
-    const innerEl = this.innerHTML;
-    this.innerHTML = "";
-
-    /// 왼쪽 메뉴;
-
-    /// 오른쪽 메뉴
+    this.renderMenu();
 
     this.initFlag = true;
   }
@@ -44,7 +37,9 @@ class NavClass extends HTMLElement {
   attributeChangedCallback(name: string) {
     if (!this.initFlag) return;
     if (name === "menu_list") {
+      this.querySelector(".kg-menu-wrapper.custom")?.remove();
       this.store();
+      this._createCustomMenu();
     }
   }
 
@@ -73,11 +68,15 @@ class NavClass extends HTMLElement {
 
   //// rendering
   renderMenu() {
-    this.createMenu();
-    this.createCustomMenu();
+    const innerHTML = this.innerHTML;
+    this.innerHTML = "";
+    this._createMenu();
+    this._createCustomMenu();
+    this._appendInnerHTML(innerHTML);
+    this._createModal();
   }
 
-  createMenu() {
+  private _createMenu() {
     const menuContainer = document.createElement("div");
     menuContainer.className = "kg-menu-container";
 
@@ -109,7 +108,7 @@ class NavClass extends HTMLElement {
     this.appendChild(menuContainer);
   }
 
-  createCustomMenu() {
+  private _createCustomMenu() {
     const customMenuWrapper = document.createElement("div");
     customMenuWrapper.className = "kg-menu-wrapper custom";
 
@@ -129,8 +128,8 @@ class NavClass extends HTMLElement {
       editBtnIcon.alt = "edit";
       editBtnIcon.addEventListener("click", (e) => {
         e.preventDefault();
-        this.modalOpen();
-        this.editMenu(menu);
+        this._modalOpen();
+        this._editMenu(menu);
       });
       editBtnWrapper.appendChild(editBtnIcon);
 
@@ -147,22 +146,22 @@ class NavClass extends HTMLElement {
     menuAddBtnWrapper.appendChild(menuAddBtn);
 
     menuAddBtnWrapper.addEventListener("click", () => {
-      this.addMenu();
-      this.modalOpen();
+      this._addMenu();
+      this._modalOpen();
     });
     this.querySelector(".kg-menu-container")
       ?.appendChild(customMenuWrapper)
       .appendChild(menuAddBtnWrapper);
   }
 
-  createModal() {
+  private _createModal() {
     const menuFuncModalContainer = document.createElement("div");
     menuFuncModalContainer.className = "kg-menu-func-modal-container";
     const menuFuncModalLayout = document.createElement("div");
     menuFuncModalLayout.className = "kg-menu-func-modal-layout";
     menuFuncModalLayout.addEventListener("click", (e) => {
       e.preventDefault();
-      this.modalClose();
+      this._modalClose();
     });
     const menuFuncModal = document.createElement("div");
     menuFuncModal.className = "kg-menu-func-modal";
@@ -173,7 +172,7 @@ class NavClass extends HTMLElement {
     this.appendChild(menuFuncModalContainer);
   }
 
-  appendInnerHTML(innerHTML: string) {
+  _appendInnerHTML(innerHTML: string) {
     const funcWrapper = document.createElement("div");
     funcWrapper.className = "kg-nav-func-wrapper";
     funcWrapper.innerHTML = innerHTML;
@@ -181,8 +180,7 @@ class NavClass extends HTMLElement {
     this.appendChild(funcWrapper);
   }
 
-  ///func
-  addMenu() {
+  private _addMenu() {
     const modal = document.querySelector(".kg-menu-func-modal");
     if (modal) modal.innerHTML = "";
 
@@ -210,29 +208,25 @@ class NavClass extends HTMLElement {
     addMenuForm.appendChild(addMenuInput);
     addMenuForm.appendChild(addMenuBtn);
 
-    /// edit event
     addMenuForm.addEventListener("submit", (e) => {
       e.preventDefault();
+      const value = addMenuForm.querySelector("kg-input>input")?.nodeValue;
       if (this.menuList.length > 4) return;
-      if (
-        this.menuList.findIndex((menu) => menu.name === e.target[0].value) !==
-        -1
-      )
-        return;
+      if (this.menuList.findIndex((m) => m.name === value)) return;
       if (new Function("e", "return " + this.onAddSubmit + "(e)")(e)) {
         this.menuList.push({
-          name: e.target[0].value,
-          class: e.target[0].value,
+          name: value as string,
+          class: value as string,
         });
 
-        this.modalClose();
+        this._modalClose();
       }
     });
 
     modal?.appendChild(addMenuForm);
   }
 
-  editMenu(menu) {
+  private _editMenu(menu: IMenuList) {
     const modal = document.querySelector(".kg-menu-func-modal");
     if (modal) modal.innerHTML = "";
 
@@ -258,24 +252,24 @@ class NavClass extends HTMLElement {
     editNameForm.appendChild(editNameInput);
     editNameForm.appendChild(editNameBtn);
 
-    /// edit event
+    // edit submit event
     editNameForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      if (e.target[0].value === menu.name) return;
+      const value = editNameForm.querySelector("kg-input>input")?.nodeValue;
+      if (value === menu.name) return;
       if (
-        new Function("e", "menu", "return " + this.onEditSubmit + "(e,menu)")(
+        new Function("e", "menu", "return" + this.onEditSubmit + "(e,menu)")(
           e,
           menu
         )
       ) {
         this.menuList = this.menuList.map((v) =>
           v.name === menu.name
-            ? { name: e.target[0].value, class: e.target[0].value }
+            ? { name: value as string, class: value as string }
             : v
         );
 
-        this.rerenderMenu();
-        this.modalClose();
+        this._modalClose();
       }
     });
 
@@ -303,36 +297,32 @@ class NavClass extends HTMLElement {
     deleteMenuForm.appendChild(deleteMenuInput);
     deleteMenuForm.appendChild(deleteMenuBtn);
 
-    /// delete event
+    // delete event
     deleteMenuForm.addEventListener("submit", (e) => {
       e.preventDefault();
+
+      const value = deleteMenuForm.querySelector("kg-input > input")?.nodeValue;
       if (
-        new Function("e", "menu", "return " + this.onDeleteSubmit + "(e,menu)")(
-          e,
-          menu
-        )
+        new Function(
+          "e",
+          "menu",
+          "value",
+          "return " + this.onDeleteSubmit + "(e,menu, value)"
+        )(e, menu, value)
       ) {
-        const old = this.querySelector(".kg-menu-wrapper.custom");
-
-        this.menuList = this.menuList.map((v) =>
-          v.name === menu.name
-            ? { name: e.target[0].value, class: e.target[0].value }
-            : v
-        );
-
-        this.modalClose();
+        this._modalClose();
       }
     });
 
-    modal.appendChild(deleteMenuForm);
+    modal?.appendChild(deleteMenuForm);
   }
 
-  modalOpen() {
+  private _modalOpen() {
     const modal = document.querySelector(".kg-menu-func-modal-container");
     modal?.classList.add("on");
   }
 
-  modalClose() {
+  private _modalClose() {
     const modal = document.querySelector(".kg-menu-func-modal-container.on");
     modal?.classList.replace("on", "off");
 
@@ -345,7 +335,7 @@ class NavClass extends HTMLElement {
 
   // utils
   checkArrowFunc(func: string) {
-    if (func.includes("=>")) func = `"function "${func}`.replace("=>", " ");
+    if (func.includes("=>")) func = "function " + `${func.replace("=>", " ")}`;
     return func;
   }
 }
