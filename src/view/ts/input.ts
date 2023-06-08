@@ -1,3 +1,13 @@
+// 사용될 수 있는 속성값 (setAttribute 메서드로 할당)
+// id : id 할당시 kg-input 내부의 input tag에 id 할당 / 외부 참조 가능
+// type : input에 대한 타입 설정 (기본값 text)
+// default_value : input 내의 defaultValue 값 설정
+// placeholder : input 내의 placeholder 값 설정
+// label : input 앞에 붙을 수 라벨 설정 / 유효한 값 할당 시 생성
+// icon : input 뒤에 search icon 생성 (기본값 : visible)
+// on_click : input 클릭시 발생 이벤트 설정
+// on_change : input 값 변경시 발생 이벤트 설정
+
 class InputClass extends HTMLElement {
   private initFlag = false;
 
@@ -10,7 +20,6 @@ class InputClass extends HTMLElement {
   private icon = "visible";
 
   private variant = "basic";
-  private color = "transparent";
 
   private onChange: string = "";
   private onClick: string = "";
@@ -33,17 +42,21 @@ class InputClass extends HTMLElement {
   store() {
     if (this.getAttribute("id")) this.id = this.getAttribute("id")!;
     if (this.getAttribute("type")) this.type = this.getAttribute("type")!;
-    if (this.getAttribute("default_value")) this.defaultValue = this.getAttribute("default_value")!;
+    if (this.getAttribute("default_value"))
+      this.defaultValue = this.getAttribute("default_value")!;
 
     if (this.getAttribute("icon")) this.icon = this.getAttribute("icon")!;
     if (this.getAttribute("label")) this.label = this.getAttribute("label")!;
-    if (this.getAttribute("placeholder")) this.placeholder = this.getAttribute("placeholder")!;
+    if (this.getAttribute("placeholder"))
+      this.placeholder = this.getAttribute("placeholder")!;
 
-    if (this.getAttribute("variant")) this.variant = this.getAttribute("variant")!;
-    if (this.getAttribute("color")) this.color = this.getAttribute("color")!;
+    if (this.getAttribute("variant"))
+      this.variant = this.getAttribute("variant")!;
 
-    if (this.getAttribute("on_change")) this.onChange = this.checkArrowFunc(this.getAttribute("on_change")!);
-    if (this.getAttribute("on_click")) this.onClick = this.checkArrowFunc(this.getAttribute("on_click")!);
+    if (this.getAttribute("on_change"))
+      this.onChange = this.checkArrowFunc(this.getAttribute("on_change")!);
+    if (this.getAttribute("on_click"))
+      this.onClick = this.checkArrowFunc(this.getAttribute("on_click")!);
   }
 
   render() {
@@ -66,6 +79,7 @@ class InputClass extends HTMLElement {
 
     if (this.id) {
       input.id = this.id;
+      this.id = "";
     }
 
     if (this.type) {
@@ -105,7 +119,7 @@ class InputClass extends HTMLElement {
     const inputBtnWrapper = document.createElement("div");
     inputBtnWrapper.className = "kg-input-btn-wrapper kg-icon";
     const inputBtn = document.createElement("img");
-    inputBtn.src = "./public/icon/search_icon.svg";
+    inputBtn.src = "@/view/public/icon/search_icon.svg";
     inputBtn.alt = "search";
     inputBtnWrapper.appendChild(inputBtn);
 

@@ -1,3 +1,6 @@
+// 사용될 수 있는 속성값 (setAttribute 메서드로 할당)
+//
+
 interface IMenuList {
   name: string;
   class: string;
@@ -7,11 +10,11 @@ class NavClass extends HTMLElement {
   private initFlag = false;
 
   /// data
-  private menuList: IMenuList[] = [];
-  private baseMenuList = [
+  static baseMenuList = [
     { name: "자료실", class: "reference" },
     { name: "Q&A", class: "qna" },
   ];
+  private menuList: IMenuList[] = [];
 
   /// style
   private color = "blk";
@@ -24,7 +27,7 @@ class NavClass extends HTMLElement {
   connectedCallback() {
     this.store();
 
-    const innerHTML = this.innerHTML;
+    const innerEl = this.innerHTML;
     this.innerHTML = "";
 
     /// 왼쪽 메뉴;
@@ -42,33 +45,36 @@ class NavClass extends HTMLElement {
     if (!this.initFlag) return;
     if (name === "menu_list") {
       this.store();
-      this.rerenderMenu();
     }
   }
 
   store() {
     /// data
-    if (this.getAttribute("menu_list")) this.menuList = JSON.parse(this.getAttribute("menu_list")!);
+    if (this.getAttribute("menu_list"))
+      this.menuList = JSON.parse(this.getAttribute("menu_list")!);
 
     /// style
     if (this.getAttribute("color")) this.color = this.getAttribute("color")!;
 
     /// event
-    if (this.getAttribute("on_add_submit")) this.onAddSubmit = this.checkArrowFunc(this.getAttribute("on_add_submit")!);
+    if (this.getAttribute("on_add_submit"))
+      this.onAddSubmit = this.checkArrowFunc(
+        this.getAttribute("on_add_submit")!
+      );
     if (this.getAttribute("on_edit_submit"))
-      this.onEditSubmit = this.checkArrowFunc(this.getAttribute("on_edit_submit")!);
+      this.onEditSubmit = this.checkArrowFunc(
+        this.getAttribute("on_edit_submit")!
+      );
     if (this.getAttribute("on_delete_submit"))
-      this.onDeleteSubmit = this.checkArrowFunc(this.getAttribute("on_delete_submit")!);
+      this.onDeleteSubmit = this.checkArrowFunc(
+        this.getAttribute("on_delete_submit")!
+      );
   }
 
   //// rendering
   renderMenu() {
     this.createMenu();
     this.createCustomMenu();
-  }
-
-  rerenderMenu() {
-    this.renderMenu();
   }
 
   createMenu() {
@@ -144,7 +150,9 @@ class NavClass extends HTMLElement {
       this.addMenu();
       this.modalOpen();
     });
-    this.querySelector(".kg-menu-container")?.appendChild(customMenuWrapper).appendChild(menuAddBtnWrapper);
+    this.querySelector(".kg-menu-container")
+      ?.appendChild(customMenuWrapper)
+      .appendChild(menuAddBtnWrapper);
   }
 
   createModal() {
@@ -187,7 +195,10 @@ class NavClass extends HTMLElement {
     const addMenuInput = document.createElement("kg-input");
     addMenuInput.setAttribute("color", "#cccccc");
     addMenuInput.setAttribute("width", "100%");
-    addMenuInput.setAttribute("placeholder", "추가할 메뉴의 이름을 입력하세요.");
+    addMenuInput.setAttribute(
+      "placeholder",
+      "추가할 메뉴의 이름을 입력하세요."
+    );
     const addMenuBtn = document.createElement("kg-button");
     addMenuBtn.setAttribute("color", "#0063c1");
     addMenuBtn.setAttribute("type", "submit");
@@ -203,14 +214,17 @@ class NavClass extends HTMLElement {
     addMenuForm.addEventListener("submit", (e) => {
       e.preventDefault();
       if (this.menuList.length > 4) return;
-      if (this.menuList.findIndex((menu) => menu.name === e.target[0].value) !== -1) return;
+      if (
+        this.menuList.findIndex((menu) => menu.name === e.target[0].value) !==
+        -1
+      )
+        return;
       if (new Function("e", "return " + this.onAddSubmit + "(e)")(e)) {
         this.menuList.push({
           name: e.target[0].value,
           class: e.target[0].value,
         });
 
-        this.rerenderMenu();
         this.modalClose();
       }
     });
@@ -248,9 +262,16 @@ class NavClass extends HTMLElement {
     editNameForm.addEventListener("submit", (e) => {
       e.preventDefault();
       if (e.target[0].value === menu.name) return;
-      if (new Function("e", "menu", "return " + this.onEditSubmit + "(e,menu)")(e, menu)) {
+      if (
+        new Function("e", "menu", "return " + this.onEditSubmit + "(e,menu)")(
+          e,
+          menu
+        )
+      ) {
         this.menuList = this.menuList.map((v) =>
-          v.name === menu.name ? { name: e.target[0].value, class: e.target[0].value } : v
+          v.name === menu.name
+            ? { name: e.target[0].value, class: e.target[0].value }
+            : v
         );
 
         this.rerenderMenu();
@@ -285,15 +306,19 @@ class NavClass extends HTMLElement {
     /// delete event
     deleteMenuForm.addEventListener("submit", (e) => {
       e.preventDefault();
-      if (new Function("e", "menu", "return " + this.onDeleteSubmit + "(e,menu)")(e, menu)) {
+      if (
+        new Function("e", "menu", "return " + this.onDeleteSubmit + "(e,menu)")(
+          e,
+          menu
+        )
+      ) {
         const old = this.querySelector(".kg-menu-wrapper.custom");
 
         this.menuList = this.menuList.map((v) =>
-          v.name === menu.name ? { name: e.target[0].value, class: e.target[0].value } : v
+          v.name === menu.name
+            ? { name: e.target[0].value, class: e.target[0].value }
+            : v
         );
-
-        this.renderMenu();
-        old.replaceWith(this.customMenuWrapper);
 
         this.modalClose();
       }

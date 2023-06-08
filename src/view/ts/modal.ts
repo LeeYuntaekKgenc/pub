@@ -1,3 +1,8 @@
+// 사용될 수 있는 속성값 (setAttribute 메서드로 할당)
+// center : id 할당시 kg-input 내부의 input tag에 id 할당 / 외부 참조 가능
+// type : input에 대한 타입 설정 (기본값 text)
+// default_value : input 내의 defaultValue 값 설정
+
 class ModalClass extends HTMLElement {
   private position = "center";
   private width = "31.25em";
@@ -9,7 +14,8 @@ class ModalClass extends HTMLElement {
   }
 
   store() {
-    if (this.getAttribute("position")) this.position = this.getAttribute("position")!;
+    if (this.getAttribute("position"))
+      this.position = this.getAttribute("position")!;
     if (this.getAttribute("width")) this.width = this.getAttribute("width")!;
     if (this.getAttribute("height")) this.height = this.getAttribute("height")!;
   }

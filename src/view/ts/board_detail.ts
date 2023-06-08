@@ -1,12 +1,30 @@
+// 사용될 수 있는 속성값 (setAttribute 메서드로 할당)
+// data : 게시물에 대한 정보를 담은 데이터 (JSON)
+
 interface IData {
+  id: number;
   title: string;
   writer: string;
   content: string;
+
+  modified: string;
+  created: string;
+
+  files?: number;
+  hidden?: boolean;
 }
 
 class BoardDetailClass extends HTMLElement {
   private initFlag = false;
-  private datas: IData = { title: "", writer: "", content: "" };
+  private datas: IData = {
+    title: "",
+    writer: "",
+    content: "",
+    id: -1,
+    modified: `${new Date()}`,
+    created: `${new Date()}`,
+    hidden: true,
+  };
 
   connectedCallback() {
     this.store();
@@ -34,7 +52,8 @@ class BoardDetailClass extends HTMLElement {
   }
 
   store() {
-    if (this.getAttribute("data")) this.datas = JSON.parse(this.getAttribute("data")!);
+    if (this.getAttribute("data"))
+      this.datas = JSON.parse(this.getAttribute("data")!);
   }
 
   render() {
