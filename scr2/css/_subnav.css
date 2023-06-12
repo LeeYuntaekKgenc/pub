@@ -1,0 +1,142 @@
+.kg-container.kg-subnav {
+  padding: 1.25em;
+
+  user-select: none;
+}
+
+.kg-li.subnav.first:has(.kg-wrapper.toggle.first > input:checked) > .kg-ul.subnav.second {
+  display: flex;
+  flex-direction: column;
+}
+
+.kg-li.subnav.second:has(.kg-wrapper.toggle.second > input:checked) > .kg-ul.subnav.third {
+  display: flex;
+  flex-direction: column;
+}
+
+.kg-icon.toggle.arrow > img {
+  transition: 0.1s;
+}
+
+.kg-wrapper.toggle:has(input:checked) label > .kg-icon.toggle.arrow > img {
+  transform: rotate(90deg);
+}
+.kg-wrapper.toggle:has(input:checked) label > .kg-icon.toggle.folder > img {
+  content: url("../public/icon/file_opened_icon.svg");
+}
+
+.kg-li.subnav {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 2.7em;
+  height: 100%;
+
+  font-size: 0.875rem;
+}
+
+.kg-ul.subnav.second {
+  display: none;
+}
+.kg-li.subnav.second {
+  padding-left: 1.1em;
+}
+
+.kg-ul.subnav.third {
+  display: none;
+}
+.kg-li.subnav.third {
+  padding-left: 1.1em;
+}
+
+.kg-wrapper.kg-li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+  min-height: 2.7em;
+}
+
+.kg-wrapper.toggle,
+.kg-wrapper.click {
+  display: flex;
+  align-items: center;
+
+  box-sizing: border-box;
+}
+
+.kg-wrapper.toggle > input[type="checkbox"] {
+  display: none;
+}
+
+.kg-wrapper.toggle > label {
+  display: flex;
+  align-items: center;
+}
+
+.kg-icon.toggle.arrow {
+  width: 0.7em;
+}
+
+.kg-icon.click.dot {
+  width: 0.7em;
+}
+
+.kg-icon.toggle.folder,
+.kg-icon.click.folder {
+  margin-left: 0.5em;
+  width: 1.8em;
+}
+
+.kg-wrapper > .kg-title.subnav {
+  position: relative;
+  margin-left: 1em;
+
+  color: #666666;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  cursor: pointer;
+}
+
+.kg-wrapper > .kg-title.subnav:hover {
+  font-weight: 700;
+}
+
+.kg-wrapper.func {
+  display: flex;
+  margin-left: auto;
+}
+
+.kg-wrapper.func > div {
+  width: 1.28em;
+  margin-left: 0.7em;
+
+  transition: 0.2s;
+}
+
+.kg-wrapper.func > div:hover {
+  filter: brightness(0.5);
+  transform: scale(120%);
+}
+
+form.kg-input-wrapper.subnav-input {
+  width: 100%;
+}
+
+form.kg-input-wrapper.subnav-input > button {
+  width: 1.28em;
+  padding: 0;
+  margin: 0;
+
+  transition: 0.2s;
+}
+
+form.kg-input-wrapper.subnav-input > button:hover {
+  filter: brightness(0.5);
+  transform: scale(120%);
+}

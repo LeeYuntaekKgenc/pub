@@ -1,0 +1,125 @@
+button {
+  margin: 0;
+  padding: 0 1.25em;
+  height: 2.6em;
+  font-size: 0.875rem;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  user-select: none;
+}
+
+.kg-btn-wrapper {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.kg-btn.basic {
+  margin: 0;
+  padding: 0;
+  width: 6.28em;
+  height: 2.6em;
+
+  font-size: 0.875rem;
+  font-weight: 400;
+  border: 1px solid;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.kg-btn.small {
+  margin: 0;
+  padding: 0;
+  width: 3.357em;
+  height: 2em;
+
+  font-size: 0.875rem;
+  font-weight: 400;
+  border: 1px solid;
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.kg-btn.middle {
+  margin: 0;
+  width: 100%;
+  height: 2.875em;
+
+  font-size: 1rem;
+  font-weight: 500;
+  border: 1px solid;
+  border-radius: 4px;
+
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.kg-btn.login {
+  height: 2.85em;
+  padding: 0 2em;
+  width: 8.42em;
+  margin-left: 2.5em;
+
+  font-weight: 300;
+
+  border: 1px solid;
+
+  transition: 0.2s;
+}
+
+.kg-btn.login.blk {
+  color: #000;
+  background-color: #fff;
+}
+.kg-btn.login.blk:hover {
+  background-color: #000;
+  color: #fff;
+  border-color: #fff;
+}
+.kg-btn.login.wht {
+  color: #fff;
+  background-color: transparent;
+}
+.kg-btn.login.wht:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.kg-btn.board-download {
+  background-color: #00c1b5;
+}
+.kg-btn.board-delete {
+  background-color: #f24c38;
+}
+.kg-btn.board-write {
+  background-color: #0063c1;
+}
+
+.kg-btn.create-menu {
+  color: #fff;
+  background-color: #0063c1;
+}
+
+.kg-btn.delete-menu {
+  color: #fff;
+  background-color: #f24c38;
+}
+
+.kg-btn.submit-btn {
+  margin: 0;
+  padding: 0;
+  height: 2.6em;
+
+  font-size: 0.875rem;
+  font-weight: 400;
+  border: 1px solid;
+  border-radius: 4px;
+
+  cursor: pointer;
+}

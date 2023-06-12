@@ -1,0 +1,81 @@
+input {
+  margin: 0;
+  padding: 0;
+
+  padding: 0 0.625em;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  border: 1px solid;
+  outline: none;
+}
+
+.kg-input-wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.kg-input-wrapper.kg-subnav {
+  width: 100%;
+}
+
+.kg-input.basic {
+  width: 100%;
+  height: 2.4em;
+
+  font-size: 0.9375rem;
+
+  border: 1px solid #cccccc;
+  color: #4d4d4d;
+}
+
+.kg-input.middle {
+  width: 100%;
+  height: 2.4em;
+
+  font-size: 0.9375rem;
+
+  border: 1px solid #cccccc;
+  color: #4d4d4d;
+}
+
+.kg-input.small {
+  width: 100%;
+  height: 2.4em;
+
+  font-size: 0.875rem;
+  border: 1px solid #cccccc;
+  color: #4d4d4d;
+}
+
+.kg-input::placeholder {
+  color: #cccccc;
+  font-size: 0.8rem;
+}
+
+.kg-input-label {
+  min-width: 6.25em;
+  height: 100%;
+  text-align: center;
+
+  color: #4d4d4d;
+}
+
+.kg-icon.kg-input.search {
+  position: absolute;
+  right: 0.5em;
+}
+
+.kg-icon.kg-input.edit {
+  position: absolute;
+  right: 2em;
+}
+
+.kg-icon.kg-input.cancel {
+  position: absolute;
+  right: 0.5em;
+}

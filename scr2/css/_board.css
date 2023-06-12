@@ -1,0 +1,332 @@
+.kg-section.board {
+  width: 100%;
+  height: 100%;
+}
+
+/* 게시판 이름 */
+.kg-heading.board {
+  display: flex;
+  align-items: center;
+
+  height: 8.25em;
+  padding-left: 2.5em;
+
+  color: #4d4d4d;
+
+  border-bottom: 1px solid #cccccc;
+  box-sizing: border-box;
+}
+
+.kg-heading.board > h1 {
+  font-size: 2.5rem;
+}
+
+/* 게시판에 추가되는 기능 버튼 및 입력창 */
+.kg-wrapper.board-func {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.25em;
+}
+
+.kg-input-wrapper.board-search {
+  width: 13.75em;
+  height: 2.25em;
+}
+
+.kg-wrapper.board-btn {
+  display: flex;
+
+  margin-right: 1.25em;
+}
+.kg-wrapper.board-btn > button {
+  margin-left: 0.625em;
+
+  color: #fff;
+}
+
+/* 게시판 */
+.kg-wrapper.board {
+  display: flex;
+  justify-content: center;
+}
+
+/* 게시판 리스트 */
+.kg-wrapper.board-list {
+  width: 100%;
+  min-width: 30em;
+  max-width: 38.5625em;
+  padding-left: 1.25em;
+}
+
+.kg-board {
+  width: 100%;
+
+  font-size: 1rem;
+
+  user-select: none;
+
+  animation-name: fadeIn;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+}
+
+.kg-board > li {
+  display: flex;
+  align-items: center;
+}
+
+.kg-board > li > div {
+  padding: 0 5px;
+}
+
+.kg-board-head {
+  display: flex;
+  width: 100%;
+  height: 3.84em;
+
+  font-size: 0.8125rem;
+  font-weight: 700;
+
+  color: #666666;
+  background-color: #f4f4f4;
+}
+
+.kg-board-head > div {
+  text-align: center;
+}
+
+.kg-board-list {
+  display: flex;
+  width: 100%;
+  height: 5.9em;
+
+  font-size: 0.75rem;
+  font-weight: 400;
+
+  color: #666666;
+
+  border-bottom: 1px solid #cccccc;
+}
+
+.kg-board-list.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 10em;
+}
+
+.kg-board-list:hover {
+  background-color: #f4f4f4;
+}
+
+.kg-board-list.on {
+  background-color: #f4f4f4;
+}
+
+.kg-board-list-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100%;
+  padding: 0 0.35em;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+}
+
+.kg-board-list-row.board-title {
+  text-align: left;
+}
+.kg-board-list-row.board-title > .title {
+  display: flex;
+  align-items: center;
+
+  font-size: 0.875rem;
+  font-weight: 500;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.kg-board-list-row.board-title > .title > .kg-icon {
+  width: 24px;
+}
+
+.kg-board-list-row.board-download {
+  position: relative;
+  align-items: center;
+
+  cursor: default;
+}
+
+.kg-icon.download.on > img {
+  filter: brightness(0.5);
+}
+.kg-icon.download.on {
+  transition: 0.2s;
+}
+.kg-icon.download.on:hover {
+  transform: scale(110%);
+}
+
+/* 다운로드 리스트 */
+
+.kg-board-list-row.board-download:has(input[type="checkbox"]:checked) > .kg-list.board-download {
+  display: block;
+}
+
+.kg-list.board-download {
+  position: absolute;
+  top: 4.7em;
+
+  display: none;
+  width: 11.5em;
+
+  background-color: #fff;
+  color: #666666;
+
+  border: 1px solid #666666;
+  border-radius: 4px;
+}
+
+.kg-list.board-download > ul > li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0 1em;
+
+  height: 2.7em;
+
+  color: #666666;
+  border-bottom: 1px solid #cccccc;
+
+  cursor: pointer;
+}
+
+.kg-list.board-download > ul > li:first-child {
+  border-radius: 4px 4px 0 0;
+}
+
+.kg-list.board-download > ul > li:last-child {
+  border-radius: 0 0 4px 4px;
+  border-bottom: none;
+}
+
+.kg-list.board-download > ul > li:hover {
+  background-color: #f4f4f4;
+}
+
+.kg-list.board-download > ul > li > span {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* pagination */
+
+.kg-board-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 3em 0;
+  font-size: 1rem;
+
+  user-select: none;
+
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.kg-board-pagination > .kg-pages {
+  display: flex;
+  margin: 0 3.71em;
+  font-size: 0.875em;
+}
+
+.kg-board-pagination > .kg-pages > .kg-page {
+  margin: 0 1.43em;
+  width: 0.625em;
+
+  color: #4d4d4d;
+  cursor: pointer;
+}
+
+.kg-board-pagination > .kg-pages > .kg-page.on {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.arrow-bck.kg-icon {
+  width: 14px;
+  color: #cccccc;
+  cursor: default;
+}
+
+.arrow-bck.kg-icon.on {
+  cursor: pointer;
+  filter: brightness(0.5);
+}
+
+.arrow-nxt.kg-icon {
+  width: 14px;
+  color: #cccccc;
+  cursor: default;
+}
+
+.arrow-nxt.kg-icon.on {
+  cursor: pointer;
+  filter: brightness(0.5);
+}
+
+/* post */
+.kg-wrapper.board-post {
+  width: 100%;
+  min-width: 30em;
+  padding: 0 1.25em;
+}
+
+.kg-board-post {
+  width: 100%;
+  height: 100%;
+  padding: 2.25em;
+  font-size: 1rem;
+
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+
+  box-sizing: border-box;
+
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.kg-board-post-title {
+  font-size: 1.25em;
+  margin-bottom: 0.3125em;
+  color: #4d4d4d;
+
+  word-break: break-all;
+}
+
+.kg-board-post-writer {
+  font-size: 0.75em;
+  margin-bottom: 1.875em;
+  color: #666666;
+}
+
+.kg-board-post-content {
+  font-size: 0.875em;
+  color: #666666;
+
+  word-break: break-all;
+}

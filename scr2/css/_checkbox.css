@@ -1,0 +1,18 @@
+input[type="checkbox"] {
+  display: none;
+}
+
+.kg-checkbox > div {
+  width: 1.3em;
+  margin: auto;
+
+  background-color: #fff;
+  border: 1px solid #666666;
+  border-radius: 4px;
+
+  transition: 0.1s;
+}
+
+.kg-checkbox:has(input:checked) > div {
+  background-color: #666666;
+}

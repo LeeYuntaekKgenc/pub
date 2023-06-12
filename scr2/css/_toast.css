@@ -1,0 +1,81 @@
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+
+.kg-wrapper.toast {
+  position: absolute;
+  top: 1.25em;
+  left: 50%;
+
+  display: none;
+  margin: 0 auto;
+
+  color: #fff;
+  font-size: 0.875rem;
+}
+
+.kg-wrapper.toast.on {
+  display: block;
+  animation-name: show;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.kg-wrapper.toast.off {
+  display: flex;
+  animation-name: hide;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+.kg-toast {
+  display: flex;
+  align-items: center;
+  padding: 0.85em 2.4em 0.85em 2em;
+
+  border-radius: 4px;
+}
+
+.kg-icon.toast {
+  display: flex;
+  align-items: center;
+  width: 1.42em;
+
+  margin-right: 1em;
+}
+.kg-icon.toast > img {
+  top: 0.5px;
+  width: 100%;
+}
+
+.kg-toast.success {
+  background-color: #0063c1;
+}
+
+.kg-toast.warning {
+  background-color: #dd6b20;
+}
+
+.kg-toast.error {
+  background-color: #f24c38;
+}

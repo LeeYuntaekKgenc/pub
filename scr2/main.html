@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./common.css" />
+
+    <link rel="stylesheet" href="./main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="root">
+      <nav>
+        <div class="kg-nav-container">
+          <div class="kg-wrapper menu">
+            <div class="logo">
+              <a href=""> <img src="./public/icon/logo_wht.svg" /> </a>
+            </div>
+            <div class="kg-menu reference wht">
+              <a>자료실</a>
+            </div>
+            <div class="kg-menu qna wht">
+              <a>QnA</a>
+            </div>
+            <!-- 사용자에 의해서 추가되는 메뉴 -->
+            <div class="kg-menu custom wht">
+              <!-- 메뉴의 이름 -->
+              <a>BIM 자료실1</a>
+              <!-- 메뉴 편집을 위한 아이콘 -->
+              <!-- 클릭시 최하단에서 찾을 수 있는 modal 등장 -->
+              <div class="kg-icon menu-edit">
+                <img src="./public/icon/write_icon.svg" />
+              </div>
+            </div>
+            <div class="kg-menu custom wht">
+              <a>BIM 자료실2</a>
+              <div class="kg-icon menu-edit">
+                <img src="./public/icon/write_icon.svg" />
+              </div>
+            </div>
+
+            <!-- 메뉴 추가를 위한 아이콘 -->
+            <!-- 클릭시 최하단에서 찾을 수 있는 modal 등장 -->
+            <div class="kg-icon menu-add">
+              <img src="./public/icon/add_icon.svg" />
+            </div>
+          </div>
+          <div class="kg-wrapper nav-func">
+            <div class="kg-icon nav-search">
+              <img src="./public/icon/search_icon.svg" alt="search" />
+            </div>
+            <div class="kg-btn-wrapper">
+              <button class="kg-btn login wht">로그인</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        <section class="main-search-container searching">
+          <div class="main-search-input-container">
+            <input class="main-search-input" type="text" placeholder="검색어를 입력하세요." />
+            <div class="search-icon icon">
+              <img src="./public/icon/search_icon.svg" alt="search" />
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- toast / on이 될 때마다  등장 -->
+      <div class="kg-wrapper toast">
+        <!-- <div class="kg-toast confirm">
+          <div class="kg-icon toast">
+            <img src="./public/icon/confirm_icon.svg" alt="confirm" />
+          </div>
+          <span>성공하였습니다.</span>
+        </div>
+        <div class="kg-toast warning">
+          <div class="kg-icon toast">
+            <img src="./public/icon/warning_icon.svg" alt="warning" />
+          </div>
+          <span>주의해주세요.</span>
+        </div>
+        <div class="kg-toast error">
+          <div class="kg-icon toast">
+            <img src="./public/icon/error_icon.svg" alt="error" />
+          </div>
+          <span>실패하였습니다.</span>
+        </div> -->
+      </div>
+
+      <!-- toast 사용예제 (실제 사용을 위해서는 수정이 필요)  -->
+      <script>
+        let hide;
+        let remove;
+        const showToast = async (type, msg, dur) => {
+          clearTimeout(hide);
+          clearTimeout(remove);
+
+          const toastWrapper = document.querySelector(".kg-wrapper.toast");
+          toastWrapper.innerHTML = "";
+
+          const toast = document.createElement("div");
+          toast.className = `kg-toast ${type}`;
+
+          const iconWrapper = document.createElement("div");
+          iconWrapper.className = "kg-icon toast";
+          const icon = document.createElement("img");
+          icon.src = `./public/icon/${type}_icon.svg`;
+          icon.alt = type;
+          iconWrapper.appendChild(icon);
+          toast.appendChild(iconWrapper);
+
+          const message = document.createElement("span");
+          message.textContent = msg ? msg : "";
+          toast.appendChild(message);
+          toastWrapper.appendChild(toast);
+
+          toastWrapper.classList.add("on");
+
+          new Promise((res, rej) => {
+            hide = setTimeout(
+              () => {
+                toastWrapper.classList.replace("on", "off");
+                res();
+              },
+              dur ? dur : 3000
+            );
+          }).then(() => {
+            remove = setTimeout(() => {
+              toastWrapper.classList.remove("off");
+              clearTimeout(hide);
+              clearTimeout(remove);
+            }, 1000);
+          });
+        };
+      </script>
+
+      <!-- 검색창 오픈시 class on -->
+      <div class="kg-container search">
+        <!-- 검색을 위한 form -->
+        <form class="kg-form search kg-input-wrapper">
+          <input class="kg-input main-search" />
+          <button class="kg-icon main-search">
+            <img src="./public/icon/search_icon.svg" alt="search" />
+          </button>
+        </form>
+
+        <div class="kg-wrapper search-list">
+          <ul>
+            <li>
+              <div class="kg-wrapper search-content">
+                <div class="kg-subtitle search-content">
+                  <div class="title">
+                    <!-- 메뉴 이름 -->
+                    <span>QnA</span> 에서 "
+                    <!-- 검색어 -->
+                    <p>우수관</p>
+                    " 검색결과
+                  </div>
+                  <div class="result">
+                    총 "
+                    <!-- 검색된 총 결과수 -->
+                    <b>2</b>
+                    "건 검색
+                  </div>
+                </div>
+                <div class="kg-list search-content">
+                  <!-- 검색된 결과 리스트 -->
+                  <a> 실시설계 / 배수공 / [ 기술자료] Civil3D 도로 <span>우수관</span> 모델링 방법</a>
+                  <a> 실시설계 / 배수공 / [ 기술자료] Civil3D 도로 <span>우수관</span> 모델링 방법</a>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="kg-wrapper search-content">
+                <div class="kg-subtitle search-content">
+                  <div class="title">
+                    <span>자료실</span> 에서 "
+                    <p>우수관</p>
+                    " 검색결과
+                  </div>
+                  <div class="result">총 "<b>0</b>"건 검색</div>
+                  <!-- 검색결과가 존재하지 않을 경우 결과 리스트를 담은 div 반환하지 않음 -->
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="kg-layout search"></div>
+      </div>
+
+      <!-- 로그인 창 오픈시 class on -->
+      <div class="kg-container login">
+        <div class="kg-login">
+          <div class="logo">
+            <img src="./public/icon/logo.svg" alt="logo" />
+          </div>
+          <!-- 로그인을 위한 form -->
+          <form class="kg-form login">
+            <input class="kg-input login-id" type="text" placeholder="ID" />
+            <input class="kg-input login-pwd" type="password" placeholder="PASSWORD" />
+            <div class="kg-wrapper login-state">
+              <label class="kg-checkbox" for="10">
+                <input id="10" type="checkbox" />
+                <div class="kg-icon">
+                  <img src="./public/icon/check_icon.svg" alt="checkbox" />
+                </div>
+              </label>
+              <span>로그인 상태 유지</span>
+            </div>
+            <button class="kg-btn login-submit" type="submit">로그인</button>
+          </form>
+        </div>
+        <div class="kg-layout login"></div>
+      </div>
+
+      <!-- 메뉴 생성시 나타나는 modal -->
+      <div class="kg-container menu-create">
+        <div class="kg-modal">
+          <h1>메뉴 생성</h1>
+          <form class="kg-form menu-create">
+            <div class="subtitle">메뉴 이름</div>
+            <div class="kg-wrapper input-btn">
+              <input type="text" class="kg-input basic" />
+              <button type="submit" class="kg-btn basic create-menu">제출</button>
+            </div>
+          </form>
+        </div>
+        <div class="kg-layout menu-create"></div>
+      </div>
+
+      <!-- 메뉴 수정시 나타나는 modal -->
+      <div class="kg-container menu-edit">
+        <div class="kg-modal menu-edit">
+          <h1>메뉴 수정</h1>
+          <form class="kg-form menu-edit">
+            <div class="subtitle">메뉴 이름 수정</div>
+            <div class="kg-wrapper input-btn">
+              <input type="text" class="kg-input basic" value="기존 메뉴 이름" />
+              <button type="submit" class="kg-btn basic create-menu">수정</button>
+            </div>
+          </form>
+          <hr />
+          <form class="kg-form menu-delete">
+            <div class="subtitle">메뉴 삭제</div>
+            <div class="kg-wrapper input-btn">
+              <input type="password" class="kg-input basic" placeholder="비밀번호를 입력해주세요." />
+              <button type="submit" class="kg-btn basic delete-menu">삭제</button>
+            </div>
+          </form>
+        </div>
+        <div class="kg-layout menu-create"></div>
+      </div>
+    </div>
+  </body>
+</html>

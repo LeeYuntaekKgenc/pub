@@ -110,6 +110,7 @@ nav {
 }
 
 .board-btn-container {
+  display: flex;
   margin-right: 1.25em;
 }
 .board-btn-container > kg-button {

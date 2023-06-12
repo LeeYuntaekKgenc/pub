@@ -1,0 +1,77 @@
+/* subnav */
+.kg-section.subnav {
+  min-width: 17.5em;
+
+  border-right: 1px solid #cccccc;
+
+  box-sizing: border-box;
+}
+
+.kg-search-wrapper.subnav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 8.25em;
+  padding: 1.25em;
+
+  border-bottom: 1px solid #cccccc;
+  box-sizing: border-box;
+}
+
+.kg-container.subnav {
+  height: 100%;
+}
+
+/* board */
+.kg-board-list-row {
+  text-align: center;
+}
+.board-check {
+  width: 10%;
+}
+.board-title {
+  width: 40%;
+}
+.board-date {
+  width: 30%;
+}
+
+.board-answer {
+  width: 20%;
+}
+
+.kg-btn.add-folder {
+  color: #fff;
+  border-color: #0063c1;
+  background-color: #0063c1;
+}
+
+.kg-btn.subnav-edit {
+  color: #fff;
+  background-color: #f24c38;
+}
+
+.kg-btn.subnav-cancel {
+  color: #fff;
+  background-color: #f24c38;
+}
+
+.kg-input.board-search {
+  padding-right: 2em;
+}
+
+.kg-wrapper.board-btn {
+  margin-left: 2.5em;
+}
+
+.kg-btn.board-download {
+  background-color: #00c1b5;
+}
+.kg-btn.board-delete {
+  background-color: #f24c38;
+}
+.kg-btn.board-write {
+  background-color: #0063c1;
+}

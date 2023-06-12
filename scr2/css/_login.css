@@ -1,0 +1,109 @@
+.kg-container.login {
+  z-index: 200;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.kg-container.login.on {
+  display: flex;
+}
+
+.kg-login {
+  z-index: 200;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 31.25em;
+  padding: 4.375em 3.4375em;
+
+  border-radius: 8px;
+
+  background-color: #fff;
+
+  box-sizing: border-box;
+
+  user-select: none;
+}
+
+.kg-login > .logo {
+  margin-bottom: 2.5em;
+}
+
+.kg-form.login {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.kg-form.login > input::placeholder {
+  color: #b3b3b3;
+}
+
+.kg-form.login > .login-id,
+.kg-form.login > .login-pwd {
+  width: 100%;
+  height: 3.57em;
+  padding: 1.42em;
+  margin-bottom: 1.25em;
+
+  border: 1px solid #b3b3b3;
+  border-radius: 8px;
+
+  box-sizing: border-box;
+}
+
+.kg-form.login > .login-state {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 3.125em;
+}
+
+.kg-form.login > .login-state > .kg-checkbox {
+  position: relative;
+  top: 1px;
+  margin: 0.3125em;
+}
+
+.kg-form.login > .login-state > span {
+  font-size: 14px;
+
+  color: #666666;
+}
+
+.kg-btn.login-submit {
+  width: 100%;
+  height: 3.3em;
+
+  font-size: 1.125rem;
+
+  border-radius: 8px;
+
+  color: #fff;
+  background-color: #0063c1;
+}
+
+.kg-layout.login {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  backdrop-filter: blur(4px);
+  background-color: rgba(0, 0, 0, 0.4);
+}
