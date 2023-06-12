@@ -57,13 +57,18 @@
         </div>
       </nav>
 
+      <!-- 검색어창 -->
       <main>
         <section class="main-search-container searching">
           <div class="main-search-input-container">
-            <input class="main-search-input" type="text" placeholder="검색어를 입력하세요." />
-            <div class="search-icon icon">
+            <input
+              class="kg-input main-search"
+              type="text"
+              placeholder="검색어를 입력하세요."
+            />
+            <button class="kg-icon kg-input search main">
               <img src="./public/icon/search_icon.svg" alt="search" />
-            </div>
+            </button>
           </div>
         </section>
       </main>
@@ -168,8 +173,14 @@
                 </div>
                 <div class="kg-list search-content">
                   <!-- 검색된 결과 리스트 -->
-                  <a> 실시설계 / 배수공 / [ 기술자료] Civil3D 도로 <span>우수관</span> 모델링 방법</a>
-                  <a> 실시설계 / 배수공 / [ 기술자료] Civil3D 도로 <span>우수관</span> 모델링 방법</a>
+                  <a>
+                    실시설계 / 배수공 / [ 기술자료] Civil3D 도로
+                    <span>우수관</span> 모델링 방법</a
+                  >
+                  <a>
+                    실시설계 / 배수공 / [ 기술자료] Civil3D 도로
+                    <span>우수관</span> 모델링 방법</a
+                  >
                 </div>
               </div>
             </li>
@@ -202,7 +213,11 @@
           <!-- 로그인을 위한 form -->
           <form class="kg-form login">
             <input class="kg-input login-id" type="text" placeholder="ID" />
-            <input class="kg-input login-pwd" type="password" placeholder="PASSWORD" />
+            <input
+              class="kg-input login-pwd"
+              type="password"
+              placeholder="PASSWORD"
+            />
             <div class="kg-wrapper login-state">
               <label class="kg-checkbox" for="10">
                 <input id="10" type="checkbox" />
@@ -226,7 +241,9 @@
             <div class="subtitle">메뉴 이름</div>
             <div class="kg-wrapper input-btn">
               <input type="text" class="kg-input basic" />
-              <button type="submit" class="kg-btn basic create-menu">제출</button>
+              <button type="submit" class="kg-btn basic create-menu">
+                제출
+              </button>
             </div>
           </form>
         </div>
@@ -240,16 +257,28 @@
           <form class="kg-form menu-edit">
             <div class="subtitle">메뉴 이름 수정</div>
             <div class="kg-wrapper input-btn">
-              <input type="text" class="kg-input basic" value="기존 메뉴 이름" />
-              <button type="submit" class="kg-btn basic create-menu">수정</button>
+              <input
+                type="text"
+                class="kg-input basic"
+                value="기존 메뉴 이름"
+              />
+              <button type="submit" class="kg-btn basic create-menu">
+                수정
+              </button>
             </div>
           </form>
           <hr />
           <form class="kg-form menu-delete">
             <div class="subtitle">메뉴 삭제</div>
             <div class="kg-wrapper input-btn">
-              <input type="password" class="kg-input basic" placeholder="비밀번호를 입력해주세요." />
-              <button type="submit" class="kg-btn basic delete-menu">삭제</button>
+              <input
+                type="password"
+                class="kg-input basic"
+                placeholder="비밀번호를 입력해주세요."
+              />
+              <button type="submit" class="kg-btn basic delete-menu">
+                삭제
+              </button>
             </div>
           </form>
         </div>

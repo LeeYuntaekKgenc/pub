@@ -40,25 +40,6 @@
   margin-left: 20%;
 }
 
-.main-search-input {
-  min-width: 39.28em;
-  height: 4em;
-  padding: 0 1.2em;
-
-  border-radius: 8px;
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-
-.main-search-input::placeholder {
-  color: #fff;
-  font-size: 1rem;
-}
-
-.search-icon {
-  position: absolute;
-  right: 1.25em;
-
-  width: 1.25em;
-  margin-top: 0.3125em;
+.kg-icon.kg-input.search.main {
+  filter: brightness(1.5);
 }

@@ -146,6 +146,8 @@
   display: flex;
   align-items: center;
 
+  width: 100%;
+
   font-size: 0.875rem;
   font-weight: 500;
 
@@ -154,8 +156,12 @@
   text-overflow: ellipsis;
 }
 
+.kg-board-list-row.board-title > .title:hover {
+}
+
 .kg-board-list-row.board-title > .title > .kg-icon {
-  width: 24px;
+  width: 1.71em;
+  filter: brightness(0.5);
 }
 
 .kg-board-list-row.board-download {
@@ -177,7 +183,8 @@
 
 /* 다운로드 리스트 */
 
-.kg-board-list-row.board-download:has(input[type="checkbox"]:checked) > .kg-list.board-download {
+.kg-board-list-row.board-download:has(input[type="checkbox"]:checked)
+  > .kg-list.board-download {
   display: block;
 }
 

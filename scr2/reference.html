@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./common.css" />
 
-    <link rel="stylesheet" href="./qna.css" />
+    <link rel="stylesheet" href="./reference.css" />
     <title>Document</title>
   </head>
   <body>
@@ -62,10 +62,15 @@
         <section class="kg-section subnav">
           <div class="kg-search-wrapper subnav">
             <div class="kg-wrapper">
-              <button class="kg-btn middle add-folder">새 상위 폴더 생성</button>
+              <button class="kg-btn middle add-folder">
+                새 상위 폴더 생성
+              </button>
             </div>
             <div class="kg-input-wrapper subnav">
-              <input class="kg-input subnav middle" placeholder="검색어를 입력하세요." />
+              <input
+                class="kg-input subnav middle"
+                placeholder="검색어를 입력하세요."
+              />
             </div>
           </div>
 
@@ -84,7 +89,9 @@
                   </div>
                   <!-- 폴더 네임이 들어가는 자리 -->
                   <!-- 툴팁의 경우 title에 할당 -->
-                  <span class="kg-title subnav" title="자식 요소가 없는 폴더">자식 요소가 없는 폴더</span>
+                  <span class="kg-title subnav" title="자식 요소가 없는 폴더"
+                    >자식 요소가 없는 폴더</span
+                  >
 
                   <div class="kg-wrapper func">
                     <div class="kg-icon add folder">
@@ -107,16 +114,24 @@
                     <input id="kg-toggle1" type="checkbox" />
                     <label for="kg-toggle1">
                       <div class="kg-icon toggle arrow">
-                        <img src="./public/icon/arrow_open_icon.svg" alt="closed" />
+                        <img
+                          src="./public/icon/arrow_open_icon.svg"
+                          alt="closed"
+                        />
                       </div>
                       <div class="kg-icon toggle folder">
-                        <img src="./public/icon/file_closed_icon.svg" alt="closed" />
+                        <img
+                          src="./public/icon/file_closed_icon.svg"
+                          alt="closed"
+                        />
                       </div>
                     </label>
                   </div>
                   <!-- 폴더 네임이 들어가는 자리 -->
                   <!-- 툴팁의 경우 title에 할당 -->
-                  <span class="kg-title subnav" title="자식 요소가 있는 폴더">자식 요소가 있는 폴더</span>
+                  <span class="kg-title subnav" title="자식 요소가 있는 폴더"
+                    >자식 요소가 있는 폴더</span
+                  >
 
                   <div class="kg-wrapper func">
                     <div class="kg-icon add folder">
@@ -136,21 +151,32 @@
                         <input id="kg-toggle2" type="checkbox" />
                         <label for="kg-toggle2" onclick="(e)=>console.log(e)">
                           <div class="kg-icon toggle arrow">
-                            <img src="./public/icon/arrow_open_icon.svg" alt="closed" />
+                            <img
+                              src="./public/icon/arrow_open_icon.svg"
+                              alt="closed"
+                            />
                           </div>
                           <div class="kg-icon toggle folder">
-                            <img src="./public/icon/file_closed_icon.svg" alt="closed" />
+                            <img
+                              src="./public/icon/file_closed_icon.svg"
+                              alt="closed"
+                            />
                           </div>
                         </label>
                       </div>
-                      <span class="kg-title subnav" name="자식 요소가 있는 폴더">자식 요소가 있는 폴더</span>
+                      <span class="kg-title subnav" name="자식 요소가 있는 폴더"
+                        >자식 요소가 있는 폴더</span
+                      >
 
                       <div class="kg-wrapper func">
                         <div class="kg-icon add folder">
                           <img src="./public/icon/add_icon.svg" alt="closed" />
                         </div>
                         <div class="kg-icon edit folder">
-                          <img src="./public/icon/write_icon.svg" alt="closed" />
+                          <img
+                            src="./public/icon/write_icon.svg"
+                            alt="closed"
+                          />
                         </div>
                       </div>
                     </div>
@@ -164,7 +190,10 @@
                               <img src="./public/icon/dot_icon.svg" alt="dot" />
                             </div>
                             <div class="click folder kg-icon">
-                              <img src="./public/icon/document_icon.svg" alt="folder" />
+                              <img
+                                src="./public/icon/document_icon.svg"
+                                alt="folder"
+                              />
                             </div>
                           </div>
                           <span class="kg-title subnav">새 폴더</span>
@@ -172,7 +201,10 @@
                           <div class="kg-wrapper func">
                             <!-- 세번쨰 계층의 경우 폴더를 추가하는 아이콘이 없음 -->
                             <div class="edit folder kg-icon">
-                              <img src="./public/icon/write_icon.svg" alt="closed" />
+                              <img
+                                src="./public/icon/write_icon.svg"
+                                alt="closed"
+                              />
                             </div>
                           </div>
                         </div>
@@ -182,7 +214,11 @@
                         <!-- 수정 또는 생성시 나타나는 input 요소 -->
                         <form class="kg-input-wrapper subnav-input">
                           <!-- 수정되기 전 기존 이름 defaultValue로 들어가는 곳 -->
-                          <input class="kg-input small" type="text" value="기본값" />
+                          <input
+                            class="kg-input small"
+                            type="text"
+                            value="기본값"
+                          />
                           <!-- 수정 및 생성 완료 버튼 -->
                           <button class="kg-icon kg-input edit" type="submit">
                             <img src="./public/icon/write_icon.svg" />
@@ -205,7 +241,10 @@
                           <img src="./public/icon/dot_icon.svg" alt="dot" />
                         </div>
                         <div class="click folder kg-icon">
-                          <img src="./public/icon/document_icon.svg" alt="folder" />
+                          <img
+                            src="./public/icon/document_icon.svg"
+                            alt="folder"
+                          />
                         </div>
                       </div>
                       <span class="kg-title subnav">새 폴더</span>
@@ -215,7 +254,10 @@
                           <img src="./public/icon/add_icon.svg" alt="closed" />
                         </div>
                         <div class="edit folder kg-icon">
-                          <img src="./public/icon/write_icon.svg" alt="closed" />
+                          <img
+                            src="./public/icon/write_icon.svg"
+                            alt="closed"
+                          />
                         </div>
                       </div>
                     </div>
@@ -253,7 +295,10 @@
           <div class="kg-container board">
             <div class="kg-wrapper board-func">
               <div class="kg-input-wrapper board-search">
-                <input class="kg-input board-search basic" placeholder="검색어를 입력하세요." />
+                <input
+                  class="kg-input board-search basic"
+                  placeholder="검색어를 입력하세요."
+                />
                 <div class="kg-icon kg-input search">
                   <img src="./public/icon/search_icon.svg" />
                 </div>
@@ -278,7 +323,9 @@
                   </li>
 
                   <!-- 값이 비어있을 경우 -->
-                  <li class="kg-board-list empty">게시된 글이 존재하지 않습니다.</li>
+                  <li class="kg-board-list empty">
+                    게시된 글이 존재하지 않습니다.
+                  </li>
 
                   <!-- 값이 존재할 경우 -->
                   <!-- 글이 선택된 경우 class에 on 추가-->
@@ -288,12 +335,20 @@
                         <input id="1" type="checkbox" />
 
                         <div class="kg-icon">
-                          <img src="./public/icon/check_icon.svg" alt="checkbox" />
+                          <img
+                            src="./public/icon/check_icon.svg"
+                            alt="checkbox"
+                          />
                         </div>
                       </label>
                     </div>
                     <div class="kg-board-list-row board-title">
-                      <div class="title"><span>테스트 1</span></div>
+                      <div class="title">
+                        <span
+                          >테스트
+                          1zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz</span
+                        >
+                      </div>
                       <div class="wirter">무소속 | 익명</div>
                     </div>
                     <div class="kg-board-list-row board-date">2022.10.25</div>
@@ -309,7 +364,10 @@
                         <input id="2" type="checkbox" />
 
                         <div class="kg-icon">
-                          <img src="./public/icon/check_icon.svg" alt="checkbox" />
+                          <img
+                            src="./public/icon/check_icon.svg"
+                            alt="checkbox"
+                          />
                         </div>
                       </label>
                     </div>
@@ -324,7 +382,10 @@
                       <input id="kg-toggle11" type="checkbox" />
                       <label for="kg-toggle11">
                         <div class="kg-icon download on">
-                          <img src="./public/icon/download_icon.svg" alt="closed" />
+                          <img
+                            src="./public/icon/download_icon.svg"
+                            alt="closed"
+                          />
                         </div>
                       </label>
 
@@ -359,7 +420,9 @@
                 <div class="kg-board-post">
                   <h1 class="kg-board-post-title">테스트 1</h1>
                   <div class="kg-board-post-writer">무소속 | 익명</div>
-                  <div class="kg-board-post-content">안녕하세요, BIM 개발부입니다.</div>
+                  <div class="kg-board-post-content">
+                    안녕하세요, BIM 개발부입니다.
+                  </div>
                 </div>
               </div>
             </div>
@@ -467,8 +530,14 @@
                 </div>
                 <div class="kg-list search-content">
                   <!-- 검색된 결과 리스트 -->
-                  <a> 실시설계 / 배수공 / [ 기술자료] Civil3D 도로 <span>우수관</span> 모델링 방법</a>
-                  <a> 실시설계 / 배수공 / [ 기술자료] Civil3D 도로 <span>우수관</span> 모델링 방법</a>
+                  <a>
+                    실시설계 / 배수공 / [ 기술자료] Civil3D 도로
+                    <span>우수관</span> 모델링 방법</a
+                  >
+                  <a>
+                    실시설계 / 배수공 / [ 기술자료] Civil3D 도로
+                    <span>우수관</span> 모델링 방법</a
+                  >
                 </div>
               </div>
             </li>
@@ -501,7 +570,11 @@
           <!-- 로그인을 위한 form -->
           <form class="kg-form login">
             <input class="kg-input login-id" type="text" placeholder="ID" />
-            <input class="kg-input login-pwd" type="password" placeholder="PASSWORD" />
+            <input
+              class="kg-input login-pwd"
+              type="password"
+              placeholder="PASSWORD"
+            />
             <div class="kg-wrapper login-state">
               <label class="kg-checkbox" for="10">
                 <input id="10" type="checkbox" />
@@ -525,7 +598,9 @@
             <div class="subtitle">메뉴 이름</div>
             <div class="kg-wrapper input-btn">
               <input type="text" class="kg-input basic" />
-              <button type="submit" class="kg-btn basic create-menu">제출</button>
+              <button type="submit" class="kg-btn basic create-menu">
+                제출
+              </button>
             </div>
           </form>
         </div>
@@ -539,16 +614,28 @@
           <form class="kg-form menu-edit">
             <div class="subtitle">메뉴 이름 수정</div>
             <div class="kg-wrapper input-btn">
-              <input type="text" class="kg-input basic" value="기존 메뉴 이름" />
-              <button type="submit" class="kg-btn basic create-menu">수정</button>
+              <input
+                type="text"
+                class="kg-input basic"
+                value="기존 메뉴 이름"
+              />
+              <button type="submit" class="kg-btn basic create-menu">
+                수정
+              </button>
             </div>
           </form>
           <hr />
           <form class="kg-form menu-delete">
             <div class="subtitle">메뉴 삭제</div>
             <div class="kg-wrapper input-btn">
-              <input type="password" class="kg-input basic" placeholder="비밀번호를 입력해주세요." />
-              <button type="submit" class="kg-btn basic delete-menu">삭제</button>
+              <input
+                type="password"
+                class="kg-input basic"
+                placeholder="비밀번호를 입력해주세요."
+              />
+              <button type="submit" class="kg-btn basic delete-menu">
+                삭제
+              </button>
             </div>
           </form>
         </div>

@@ -62,7 +62,7 @@
   font-size: 1rem;
 
   color: #fff;
-  background-color: rgba(217, 217, 217, 0.2);
+  background-color: rgba(217, 217, 217, 0.5);
 }
 
 .kg-input.main-search::placeholder {
